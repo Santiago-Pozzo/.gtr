@@ -14,8 +14,6 @@
 //import flangerFl011 from '../assets/images/flanger-fl-011.jpg'
 //import parkerEvolution from '../assets/images/parkerEvolution.webp'
 
-//import  from '../assets/images/
-
 
 export const products = [
     {
@@ -25,7 +23,7 @@ export const products = [
         model: "Telecaster",
         description: "Fender Standard Telecaster de aliso butterscotch blonde con diapasón de arce",
         //img: "fenderTelecaster",
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://http2.mlstatic.com/D_NQ_NP_955283-MLA31603718111_072019-O.webp",
         price: 950000,
     },
 
@@ -36,7 +34,7 @@ export const products = [
         model: "Les Paul",
         description: "Gibson Les Paul Standard 50s de caoba vintage sunburst brillante con diapasón de laurel indio",
         //img: gibsonLesPaul,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkdfSNtYDuOOgmStK_9vtQvIbe1Wvu7PtyIA&usqp=CAU",
         price: 630000,
     },
 
@@ -47,7 +45,7 @@ export const products = [
         model: "Jazz Bass",
         description: "Fender Player Jazz Bass Butter. Material del cuerpo: Aliso (Alder)",
         //img: fenderJazzBass,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Fender_Jazz-Bass_1966.jpg/228px-Fender_Jazz-Bass_1966.jpg",
         price: 350000,
     },
 
@@ -58,7 +56,7 @@ export const products = [
         model: "Baby",
         description: "Big Baby Taylor para diestros natural ébano barniz",
         //img: taylorBaby,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://www.heavenimagenes.com/heavencommerce/5765a4f8-445b-48f8-889e-9378aee05156/images/v2/PARQUER/12155_small.jpg",
         price: 410000,
     },
 
@@ -69,7 +67,7 @@ export const products = [
         model: "300Kecm",
         description: "Gitarra criolla clásica para diestros natural, tapa de abeto",
         //img: alpujarra300Kecm,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://guitarraszagert.com/wp-content/uploads/2023/01/Guitarra-La-Alpujarra-300K-300KINK-perfil.jpg",
         price: 340000,
     },
 
@@ -80,7 +78,7 @@ export const products = [
         model: "Taurus T-25",
         description: "Bajo de 5 cuerdas. 24 trastes. Cuerpo de caoba, mastil de Caoba/Maple",
         //img: washburnTaurusT25,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://d1aeri3ty3izns.cloudfront.net/media/42/423440/600/preview.jpg",
         price: 190000,
     },
 
@@ -91,7 +89,7 @@ export const products = [
         model: "Rumble 200",
         description: "Amplificador Fender Rumble Series 200 Transistor para bajo de 200W color negro/plata 220V",
         //img: fenderRumble200,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://solomusica.com.ar/sm2020/3603-large_default/fender-rumble-200.jpg",
         price: 750000,
     },
 
@@ -100,9 +98,9 @@ export const products = [
         cat: "Amplificador",
         brand: "Marshal",
         model: "Code 100",
-        description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
-        //img: marshallCode100,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        description: "Amplificador de guitarra 100 watts. Bluetooth. USB",
+        //img: peavey6505Valvular,
+        img: "https://bairesrocks.vteximg.com.br/arquivos/ids/203742/624354-MLA41242223638_032020-F.jpg?v=637313065982730000",
         price: 265000,
     },
 
@@ -111,9 +109,9 @@ export const products = [
         cat: "Amplificador",
         brand: "Peavey",
         model: "6505 Valvular",
-        description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
+        description: "Amplificador de guitarra valvular. Combo. 60 watts",
         //img: peavey6505Valvular,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://http2.mlstatic.com/D_NQ_NP_656142-MLA53338924507_012023-W.jpg",
         price: 270000,
     },
 
@@ -121,10 +119,10 @@ export const products = [
         id: 9,
         cat: "Pedal",
         brand: "Boss",
-        model: "Distortion DS1",
-        description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
+        model: "DS1",
+        description: "Distorsión analógica. Tónos clásicos. Ataque de bordes duros",
         //img: bossDS1,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://www.heavenimagenes.com/heavencommerce/b23e72e1-40ba-4adb-9dc3-7ee3d3a63b35/images/v2/BOSS/2010302014256880_01_medium.jpg",
         price: 85000,
     },
 
@@ -132,10 +130,10 @@ export const products = [
         id: 10,
         cat: "Pedal",
         brand: "Boss",
-        model: "Tremolo TR2",
-        description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
+        model: "TR2",
+        description: "Pedal de Efecto para Guitarra Tremolo",
         //img: bossTR2,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://www.heavenimagenes.com/heavencommerce/c98a269a-2842-4da0-a6e5-e0e155d29966/images/v2/BOSS/1804131804331013_01_medium.jpg",
         price: 75000,
     },
 
@@ -144,9 +142,9 @@ export const products = [
         cat: "Pedal",
         brand: "Moer",
         model: "Pure Octave",
-        description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
+        description: "Pedal de Efecto Octavador Polifonico.",
         //img: moerPureOctave,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://www.heavenimagenes.com/heavencommerce/0c3d234c-03b5-48ac-85a1-10e80752be67/images/v2/MOOER/1705112007015312_01_medium.jpg",
         price: 37000,
     },
 
@@ -154,10 +152,10 @@ export const products = [
         id: 12,
         cat: "Accesorios",
         brand: "Ernie Ball",
-        model: "4039 Correa",
-        description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
+        model: "4039",
+        description: "Correa de guitarra con porta púas",
         //img: ernieBall4039,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://http2.mlstatic.com/D_NQ_NP_653103-MLA31547292758_072019-O.webp",
         price: 15000,
     },
 
@@ -168,7 +166,7 @@ export const products = [
         model: "Fl 011",
         description: "Soporte plegable para todas las tallas de guitarra acústica, guitarra eléctrica, guitarra y bajo",
         //img: flangerFl011,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://d3ugyf2ht6aenh.cloudfront.net/stores/969/083/products/pl-stico-guitarra-inteligente-soporte-para-guitarra-el-ctrica-ac-stica-bass-flanger-fl-011-bff3f888adf591743816026814163300-640-0.jpg",
         price: 15000,
     },
 
@@ -179,7 +177,7 @@ export const products = [
         model: "Evolution Funda",
         description: "Funda para guitarra electrica acolchada. Mochila",
         //img: parkerEvolution,
-        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
+        img: "https://http2.mlstatic.com/D_NQ_NP_906829-MLA31913066571_082019-O.webp",
         price: 47000,
     },
 ];
