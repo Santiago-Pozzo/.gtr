@@ -1,4 +1,4 @@
-import fenderTelecaster from '../assets/images/Telecaster.jpg'
+import fenderTelecaster from '@images/Telecaster.jpg'
 import gibsonLesPaul from '../assets/images/lespaul.webp'
 import fenderJazzBass from '../assets/images/jazzbass.jpg'
 import taylorBaby from '../assets/images/taylorbaby.jpg'
