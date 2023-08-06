@@ -5,6 +5,7 @@ import Hero from './components/Hero/Hero'
 import CategoriesWrapper from './components/Categories/CategoriesWrapper'
 import ProductsCards from './components/Products/ProductsCards'
 import Footer from './components/Footer/Footer'
+import Featured from './components/Featured/Featured'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navbar/>
       <Layout>
         <Hero/>
+        <Featured/>
         <CategoriesWrapper/>
         <ProductsCards/> 
       </Layout>

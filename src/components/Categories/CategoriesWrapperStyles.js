@@ -1,11 +1,18 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
 
+export const CategoriesTitleStyled = styled.h1`
+        margin-top: 50px;
+        width: 80%;
+        text-align: center;
+        font-size: 20px;
+`;
+
 export const CategoriesWrapperStyled = styled.section`
     max-width: 80%;
     background-color: var(--Verdigris);
     border-radius: 20px;
-    margin-top: 50px;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +37,7 @@ export const CategoriesWrapperStyled = styled.section`
         }
 
         @media (min-width: 1020px) {
-            width: 80px;
+            width: 72px;
             border-radius: 20px;
             padding: 10px;
         }

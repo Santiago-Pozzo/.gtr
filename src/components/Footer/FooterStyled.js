@@ -5,7 +5,6 @@ export const FooterStyled = styled.footer`
     background-color: var(--Black);   
     display: flex;
     flex-wrap: wrap;
-    //flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
