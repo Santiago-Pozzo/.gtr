@@ -1,18 +1,18 @@
-import fenderTelecaster from 'E:/Curso programación web NUCBA/MODULO 3 - React/.gtr Proyecto React/src/assets/images/Telecaster.jpg'
-import gibsonLesPaul from '../assets/images/lespaul.webp'
-import fenderJazzBass from '../assets/images/jazzbass.jpg'
-import taylorBaby from '../assets/images/taylorbaby.jpg'
-import alpujarra300Kecm from '../assets/images/alpujarra300Kecm.jpg'
-import washburnTaurusT25 from '../assets/images/washburnTaurusT25.webp'
-import  fenderRumble200 from '../assets/images/fenderRumble200.webp'
-import marshallCode100 from '../assets/images/marshallCode100.jpg'
-import peavey6505Valvular from '../assets/images/peavey.webp'
-import bossDS1 from '../assets/images/bossDS1.jpg'
-import bossTR2 from '../assets/images/bossTR2.jpg'
-import moerPureOctave from '../assets/images/moerPureOctave.jpg'
-import ernieBall4039 from '../assets/images/ernieBallCorrea.webp'
-import flangerFl011 from '../assets/images/flanger-fl-011.jpg'
-import parkerEvolution from '../assets/images/parkerEvolution.webp'
+//import fenderTelecaster from 'E:/Curso programación web NUCBA/MODULO 3 - React/.gtr Proyecto React/src/assets/images/Telecaster.jpg'
+//import gibsonLesPaul from '../assets/images/lespaul.webp'
+//import fenderJazzBass from '../assets/images/jazzbass.jpg'
+//import taylorBaby from '../assets/images/taylorbaby.jpg'
+//import alpujarra300Kecm from '../assets/images/alpujarra300Kecm.jpg'
+//import washburnTaurusT25 from '../assets/images/washburnTaurusT25.webp'
+//import  fenderRumble200 from '../assets/images/fenderRumble200.webp'
+//import marshallCode100 from '../assets/images/marshallCode100.jpg'
+//import peavey6505Valvular from '../assets/images/peavey.webp'
+//import bossDS1 from '../assets/images/bossDS1.jpg'
+//import bossTR2 from '../assets/images/bossTR2.jpg'
+//import moerPureOctave from '../assets/images/moerPureOctave.jpg'
+//import ernieBall4039 from '../assets/images/ernieBallCorrea.webp'
+//import flangerFl011 from '../assets/images/flanger-fl-011.jpg'
+//import parkerEvolution from '../assets/images/parkerEvolution.webp'
 
 //import  from '../assets/images/
 
@@ -24,7 +24,8 @@ export const products = [
         brand: "Fender",
         model: "Telecaster",
         description: "Fender Standard Telecaster de aliso butterscotch blonde con diapasón de arce",
-        img: fenderTelecaster,
+        //img: "fenderTelecaster",
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 950000,
     },
 
@@ -34,7 +35,8 @@ export const products = [
         brand: "Gibson",
         model: "Les Paul",
         description: "Gibson Les Paul Standard 50s de caoba vintage sunburst brillante con diapasón de laurel indio",
-        img: gibsonLesPaul,
+        //img: gibsonLesPaul,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 630000,
     },
 
@@ -44,7 +46,8 @@ export const products = [
         brand: "Fender",
         model: "Jazz Bass",
         description: "Fender Player Jazz Bass Butter. Material del cuerpo: Aliso (Alder)",
-        img: fenderJazzBass,
+        //img: fenderJazzBass,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 350000,
     },
 
@@ -54,7 +57,8 @@ export const products = [
         brand: "Taylor",
         model: "Baby",
         description: "Big Baby Taylor para diestros natural ébano barniz",
-        img: taylorBaby,
+        //img: taylorBaby,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 410000,
     },
 
@@ -64,7 +68,8 @@ export const products = [
         brand: "Alpujarra",
         model: "300Kecm",
         description: "Gitarra criolla clásica para diestros natural, tapa de abeto",
-        img: alpujarra300Kecm,
+        //img: alpujarra300Kecm,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 340000,
     },
 
@@ -74,7 +79,8 @@ export const products = [
         brand: "Washburn",
         model: "Taurus T-25",
         description: "Bajo de 5 cuerdas. 24 trastes. Cuerpo de caoba, mastil de Caoba/Maple",
-        img: washburnTaurusT25,
+        //img: washburnTaurusT25,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 190000,
     },
 
@@ -84,7 +90,8 @@ export const products = [
         brand: "Fender",
         model: "Rumble 200",
         description: "Amplificador Fender Rumble Series 200 Transistor para bajo de 200W color negro/plata 220V",
-        img: fenderRumble200,
+        //img: fenderRumble200,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 750000,
     },
 
@@ -94,7 +101,8 @@ export const products = [
         brand: "Marshal",
         model: "Code 100",
         description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
-        img: marshallCode100,
+        //img: marshallCode100,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 265000,
     },
 
@@ -104,7 +112,8 @@ export const products = [
         brand: "Peavey",
         model: "6505 Valvular",
         description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
-        img: peavey6505Valvular,
+        //img: peavey6505Valvular,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 270000,
     },
 
@@ -114,7 +123,8 @@ export const products = [
         brand: "Boss",
         model: "Distortion DS1",
         description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
-        img: bossDS1,
+        //img: bossDS1,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 85000,
     },
 
@@ -124,7 +134,8 @@ export const products = [
         brand: "Boss",
         model: "Tremolo TR2",
         description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
-        img: bossTR2,
+        //img: bossTR2,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 75000,
     },
 
@@ -134,7 +145,8 @@ export const products = [
         brand: "Moer",
         model: "Pure Octave",
         description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
-        img: moerPureOctave,
+        //img: moerPureOctave,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 37000,
     },
 
@@ -144,7 +156,8 @@ export const products = [
         brand: "Ernie Ball",
         model: "4039 Correa",
         description: "Descripción del producto, tipo de micrófonos, país de origen, tipo de madera, color, etc",
-        img: ernieBall4039,
+        //img: ernieBall4039,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 15000,
     },
 
@@ -154,7 +167,8 @@ export const products = [
         brand: "Flanger",
         model: "Fl 011",
         description: "Soporte plegable para todas las tallas de guitarra acústica, guitarra eléctrica, guitarra y bajo",
-        img: flangerFl011,
+        //img: flangerFl011,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 15000,
     },
 
@@ -164,7 +178,8 @@ export const products = [
         brand: "Parquer",
         model: "Evolution Funda",
         description: "Funda para guitarra electrica acolchada. Mochila",
-        img: parkerEvolution,
+        //img: parkerEvolution,
+        img: "https://st3.depositphotos.com/3328119/35782/v/600/depositphotos_357821278-stock-illustration-set-of-different-types-of.jpg",
         price: 47000,
     },
 ];
