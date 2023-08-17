@@ -59,4 +59,8 @@ export const HeroContainerStyled = styled.section`
                 font-size: 35px;
             }
         }
+
+        button {
+         background-color: var(--Verdigris);   
+        }
     `;

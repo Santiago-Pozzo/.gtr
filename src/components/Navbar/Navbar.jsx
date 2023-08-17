@@ -1,15 +1,23 @@
 import React from 'react'
-import { NavbarContainerStyled, NabvarLogoContainerStyled,NavbarMenuLabelContainerStyled, NavbarLinksContainerStyled, NavbarLinkStyled, NavbarCartLabelContainerStyled, NavbarLabelsBoxStyled, NavbarLinkIconStyled } from "./NavbarStyles"
+import { useContext } from 'react'
+import { Context } from '../../Contexts/HeaderContext'
+
+import { NavbarContainerStyled, NabvarLogoContainerStyled,NavbarMenuBtnStyled, NavbarLinksContainerStyled, NavbarLinkStyled, NavbarCartBtnStyled, NavbarLabelsBoxStyled, NavbarLinkIconStyled, Overlay } from "./NavbarStyles"
 
 import {GiHamburgerMenu, GiGuitarBassHead} from "react-icons/gi"
 import {BiSolidHome} from "react-icons/bi"
 import {FaUserPlus, FaShoppingCart} from "react-icons/fa"
+import {IoMdContacts} from "react-icons/io"
+import {TbHandRock} from "react-icons/tb"
 
 import {motion} from "framer-motion"
 
 import  Logo  from '../../assets/images/logogtr.png'
 
 const Navbar = () => {
+  const { state, dispatch } = useContext(Context);
+
+
   return (
     <NavbarContainerStyled> 
 
@@ -17,13 +25,15 @@ const Navbar = () => {
         <NabvarLogoContainerStyled src={Logo} alt="Logo"/>
       </a>
 
-      <NavbarLinksContainerStyled> 
+      <NavbarLinksContainerStyled
+       className={state.isActive ? "active" : ""}
+      > 
         <NavbarLinkStyled href="/#">
          <motion.div whileTap={{scale:0.95}}>
             <NavbarLinkIconStyled>
               <BiSolidHome/>
             </NavbarLinkIconStyled>    
-            Home    
+           Home   
           </motion.div>
         </NavbarLinkStyled>
 
@@ -32,7 +42,25 @@ const Navbar = () => {
             <NavbarLinkIconStyled>
               <GiGuitarBassHead/>
             </NavbarLinkIconStyled>           
-            Productos 
+           Productos  
+          </motion.div>            
+        </NavbarLinkStyled>
+
+        <NavbarLinkStyled href="/#">
+          <motion.div whileTap={{scale:0.95}}>
+            <NavbarLinkIconStyled>
+              <TbHandRock/>
+            </NavbarLinkIconStyled>           
+           ¿Qué es .GTR?  
+          </motion.div>            
+        </NavbarLinkStyled>
+
+        <NavbarLinkStyled href="/#">
+          <motion.div whileTap={{scale:0.95}}>
+            <NavbarLinkIconStyled>
+              <IoMdContacts/>
+            </NavbarLinkIconStyled>           
+           Contacto  
           </motion.div>            
         </NavbarLinkStyled>
 
@@ -41,25 +69,34 @@ const Navbar = () => {
             <NavbarLinkIconStyled> 
               <FaUserPlus/>      
             </NavbarLinkIconStyled>             
-            Iniciar Sesión 
+           Iniciar Sesión  
           </motion.div>          
         </NavbarLinkStyled>          
       </NavbarLinksContainerStyled>
 
       <NavbarLabelsBoxStyled>
         <motion.div whileTap={{scale:0.95}}>
-          <NavbarMenuLabelContainerStyled>
+          <NavbarMenuBtnStyled
+           onClick={ 
+            () => dispatch({ type: "toggleMenu" })
+          }
+          >
             <GiHamburgerMenu/>
-          </NavbarMenuLabelContainerStyled>
+          </NavbarMenuBtnStyled>
         </motion.div>
 
         <motion.div whileTap={{scale:0.95}}>
-          <NavbarCartLabelContainerStyled>
+          <NavbarCartBtnStyled>
             <FaShoppingCart/>
-          </NavbarCartLabelContainerStyled>
+          </NavbarCartBtnStyled>
         </motion.div>   
       </NavbarLabelsBoxStyled>
-         
+
+      <Overlay
+       className={
+        state.isActive ? "active" : ""
+       }
+      />         
     </NavbarContainerStyled>
   )
 }

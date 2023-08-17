@@ -2,6 +2,7 @@ import styled from "styled-components"
 import {motion} from "framer-motion"
 
 export const FooterStyled = styled.footer`
+    width: 100%;
     background-color: var(--Black);   
     display: flex;
     flex-wrap: wrap;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const NavbarContainerStyled = styled.header`
     height: 80px;
-    //width: 100%;
+    width: 100%;
     background-color: var(--Black);
     display: flex;
     justify-content: space-between;
@@ -26,7 +26,7 @@ export const NavbarContainerStyled = styled.header`
         gap: 10px;
     `;
 
-        export const NavbarLabelContainerStyled = styled.div`
+        export const NavbarBtnStyled = styled.button`
             display: flex;
             align-items: center;
             justify-content: center;
@@ -34,47 +34,81 @@ export const NavbarContainerStyled = styled.header`
             cursor: pointer;
             color: var(--Hollywood-cerise);
             font-size: 24px;
+            border: none;
+            background: none;
         `;
 
-            export const NavbarMenuLabelContainerStyled = styled(NavbarLabelContainerStyled)`
-                @media (min-width: 768px) {
+            export const NavbarMenuBtnStyled = styled(NavbarBtnStyled)`
+                @media (min-width: 760px) {
                     display: none;
                 }
             `;
 
-            export const NavbarCartLabelContainerStyled = styled(NavbarLabelContainerStyled)`
+            export const NavbarCartBtnStyled = styled(NavbarBtnStyled)`
                 display: none;
             `;
 
     export const NavbarLinksContainerStyled = styled.div`
         display: none;
 
-        @media (min-width: 768px) {
+        &.active {
             display: flex;
+            flex-direction: column;
+            justify-content: top;
+            z-index: 2;
+            background: var(--Black);
+            position: fixed;
+            top: 80px;
+            right: 0;
+            height: 100vh;
+            padding: 30px 10px;
+            gap: 15px;
+        }
+
+        @media (min-width: 760px) {
+            display: flex;
+            height: auto;
+            position: relative;
+            top: 0;
+            flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 30px;
+            padding: 8px;
+            gap: 5px;
         }
 
-        :hover {
-            background-color: var(--Black-olive);
-        }
     `;
 
         export const NavbarLinkStyled = styled.a`
             cursor: pointer;
             font-family: 'Libre Franklin', 
             sans-serif;
-            font-size: 18px; 
-            padding: 8px 15px;
+            font-size: 12px; 
+            padding: 5px 15px;
             border-radius: 1rem;
+            
+            &:hover {
+            background-color: var(--Black-olive);
+            }
+
+            @media (min-width: 1040px) {
+                font-size: 15px;
+            }
+
+            @media (min-width: 1040px) {
+                font-size: 15px;
+            }
             
             div {
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: left;
                 gap: 5px;
+
+                @media (min-width: 760px) {
+                justify-content: center;
+                }
             }
         `;
 
@@ -82,6 +116,27 @@ export const NavbarContainerStyled = styled.header`
                 color: var(--Hollywood-cerise);
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: center;    
             `;
 
+    export const Overlay = styled.div` 
+        display: none;
+        
+        &.active {
+            display: flex;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(5px);
+           -webkit-backdrop-filter: blur(5px);
+
+            @media (min-width: 760px) {
+                top: 100px;
+            }
+        }
+    `;

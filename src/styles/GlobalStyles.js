@@ -56,7 +56,12 @@ export const GlobalStyles = createGlobalStyle`
 
     *::-webkit-scrollbar-thumb {
         background-color: var(--Verdigris);    
-        border-radius: 20px;       
+        border-radius: 20px;
+    } 
+    
+    .hidden {
+        display: none;
+    }
 
     /* * {
         border: solid 1px red;

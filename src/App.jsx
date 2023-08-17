@@ -7,17 +7,23 @@ import ProductsCards from './components/Products/ProductsCards'
 import Footer from './components/Footer/Footer'
 import Featured from './components/Featured/Featured'
 
+import { MenuDespegable } from './Contexts/HeaderContext'
+
 function App() {
   return (
-    <>  
-      <Navbar/>
+    <>      
       <Layout>
+        <MenuDespegable> 
+          <Navbar/>
+        </MenuDespegable>  
+
         <Hero/>
         <Featured/>
         <CategoriesWrapper/>
         <ProductsCards/> 
-      </Layout>
-      <Footer/>       
+
+        <Footer/> 
+      </Layout>      
     </>
   )
 }
