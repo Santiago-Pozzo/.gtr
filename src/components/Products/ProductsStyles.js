@@ -3,14 +3,15 @@ import styled from "styled-components"
 export const ProducsWraperStyled = styled.section`
     display: flex;
     flex-direction: column;
-    margin: 50px 10px;
+    margin: 35px 10px;
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
+    gap: 25px;
 
     @media (min-width: 760px) {
-
+        gap: 40px;
     }
 `;
 

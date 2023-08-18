@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { NavLink } from "react-router-dom";
 
 export const NavbarContainerStyled = styled.header`
     height: 80px;
@@ -9,6 +9,10 @@ export const NavbarContainerStyled = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+
+    @media (min-width: 760px) {
+            height: 110px;
+        }
 `;
 
     export const NabvarLogoContainerStyled = styled.img`
@@ -80,13 +84,17 @@ export const NavbarContainerStyled = styled.header`
 
     `;
 
-        export const NavbarLinkStyled = styled.a`
+        export const NavbarLinkStyled = styled(NavLink)`
             cursor: pointer;
             font-family: 'Libre Franklin', 
             sans-serif;
             font-size: 12px; 
             padding: 5px 15px;
             border-radius: 1rem;
+
+            &.active {
+                color: var(--Hollywood-cerise);
+            }
             
             &:hover {
             background-color: var(--Black-olive);

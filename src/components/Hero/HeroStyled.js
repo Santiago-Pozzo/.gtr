@@ -9,6 +9,7 @@ export const HeroContainerStyled = styled.section`
     max-width: 1200px;
     align-items: center;
     text-align: center;
+    padding: 0 0 100px;
 `;
 
     export const HeroImgContainer = styled.div`
@@ -61,6 +62,7 @@ export const HeroContainerStyled = styled.section`
         }
 
         button {
+         margin-top: 30px;   
          background-color: var(--Verdigris);   
         }
     `;

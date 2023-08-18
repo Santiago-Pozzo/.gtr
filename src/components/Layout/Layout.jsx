@@ -1,10 +1,21 @@
 import React from 'react'
-import { LayoutWrapper } from './LayoutStyles'
+import { ContentContainerStyled, LayoutWrapper } from './LayoutStyles'
+import NavBar from "../Navbar/Navbar"
+import Footer from "../Footer/Footer"
+import { MenuDespegable } from '../../Contexts/HeaderContext'
 
 const Layout = ({children}) => {
   return (
     <LayoutWrapper>
-        {children}        
+      <MenuDespegable> 
+          <NavBar/>
+      </MenuDespegable>  
+
+      <ContentContainerStyled>
+        {children} 
+      </ContentContainerStyled>
+
+      <Footer/>         
     </LayoutWrapper>   
   )
 }

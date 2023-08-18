@@ -3,7 +3,6 @@ import { useContext } from 'react'
 import { Context } from '../../Contexts/HeaderContext'
 
 import { NavbarContainerStyled, NabvarLogoContainerStyled,NavbarMenuBtnStyled, NavbarLinksContainerStyled, NavbarLinkStyled, NavbarCartBtnStyled, NavbarLabelsBoxStyled, NavbarLinkIconStyled, Overlay } from "./NavbarStyles"
-
 import {GiHamburgerMenu, GiGuitarBassHead} from "react-icons/gi"
 import {BiSolidHome} from "react-icons/bi"
 import {FaUserPlus, FaShoppingCart} from "react-icons/fa"
@@ -13,6 +12,7 @@ import {TbHandRock} from "react-icons/tb"
 import {motion} from "framer-motion"
 
 import  Logo  from '../../assets/images/logogtr.png'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   const { state, dispatch } = useContext(Context);
@@ -21,14 +21,14 @@ const Navbar = () => {
   return (
     <NavbarContainerStyled> 
 
-      <a href="/#">
+      <NavLink to="/">
         <NabvarLogoContainerStyled src={Logo} alt="Logo"/>
-      </a>
+      </NavLink>
 
       <NavbarLinksContainerStyled
        className={state.isActive ? "active" : ""}
       > 
-        <NavbarLinkStyled href="/#">
+        <NavbarLinkStyled to="/">
          <motion.div whileTap={{scale:0.95}}>
             <NavbarLinkIconStyled>
               <BiSolidHome/>
@@ -37,7 +37,7 @@ const Navbar = () => {
           </motion.div>
         </NavbarLinkStyled>
 
-        <NavbarLinkStyled href="/#">
+        <NavbarLinkStyled to="/products">
           <motion.div whileTap={{scale:0.95}}>
             <NavbarLinkIconStyled>
               <GiGuitarBassHead/>
@@ -46,7 +46,7 @@ const Navbar = () => {
           </motion.div>            
         </NavbarLinkStyled>
 
-        <NavbarLinkStyled href="/#">
+        <NavbarLinkStyled to="/about">
           <motion.div whileTap={{scale:0.95}}>
             <NavbarLinkIconStyled>
               <TbHandRock/>
@@ -55,7 +55,7 @@ const Navbar = () => {
           </motion.div>            
         </NavbarLinkStyled>
 
-        <NavbarLinkStyled href="/#">
+        <NavbarLinkStyled to="/contact">
           <motion.div whileTap={{scale:0.95}}>
             <NavbarLinkIconStyled>
               <IoMdContacts/>
@@ -64,7 +64,7 @@ const Navbar = () => {
           </motion.div>            
         </NavbarLinkStyled>
 
-        <NavbarLinkStyled href="/#">
+        <NavbarLinkStyled to="/login">
           <motion.div whileTap={{scale:0.95}}>
             <NavbarLinkIconStyled> 
               <FaUserPlus/>      

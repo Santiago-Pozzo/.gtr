@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 export const CategoriesTitleStyled = styled.h1`
         margin-top: 50px;
-        width: 80%;
+        width: 100%;
         text-align: center;
         font-size: 20px;
 `;
@@ -37,7 +37,7 @@ export const CategoriesWrapperStyled = styled.section`
         }
 
         @media (min-width: 1020px) {
-            width: 72px;
+            width: 70px;
             border-radius: 20px;
             padding: 10px;
         }

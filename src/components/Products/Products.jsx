@@ -1,11 +1,14 @@
 import React from 'react'
-import { products } from '../../data/ProductsData'
+import  { products } from '../../data/ProductsData'
 import { CardProductStyled, ProducsWraperStyled, ProductsBoxStyled, CardImg, CardBottomBox,CardCategory, CardBrand, CardModel, CardDescription, CardInfoBox, ButtonBoxStyled } from './ProductsStyles'
-import { ButtonStyled } from '../Button/ButtonStyles'
 
-const ProductsCards = () => {
+import  { ButtonStyled }  from '../Button/ButtonStyles'
+import Categories from "../Categories/CategoriesWrapper"
+
+const Products = () => {
   return (
-    <ProducsWraperStyled> 
+    <ProducsWraperStyled>
+        <Categories /> 
         <ProductsBoxStyled>
             {
                 products.map((product)=>{
@@ -46,4 +49,4 @@ const ProductsCards = () => {
   )
 }
 
-export default ProductsCards
+export default Products

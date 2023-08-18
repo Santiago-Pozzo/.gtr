@@ -15,9 +15,6 @@ import { AiFillTrademarkCircle } from "react-icons/ai"
 const CategoriesWrapper = () => {
   return (
     <>
-        <CategoriesTitleStyled>
-            Conocé todos nuestros productos!
-        </CategoriesTitleStyled>
         <CategoriesWrapperStyled>
             <CategoryCardStyled
             whileTap={{scale:0.95}}>
