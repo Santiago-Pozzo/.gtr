@@ -4,12 +4,16 @@ import styled from "styled-components"
 export const HeroContainerStyled = styled.section`
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 0 ;
     gap: 15px;
     max-width: 1200px;
     align-items: center;
     text-align: center;
-    padding: 0 0 100px;
+    //padding: 0 0 100px;
+
+    button {
+        background-color: var(--Verdigris);   
+    }
 `;
 
     export const HeroImgContainer = styled.div`
@@ -32,6 +36,7 @@ export const HeroContainerStyled = styled.section`
         align-items:center;
         text-align: center;
         gap: 12px;
+        padding: 15px;
 
         @media (min-width: 760px) {
             gap: 20px;
@@ -59,10 +64,5 @@ export const HeroContainerStyled = styled.section`
             @media (min-width: 760px) {
                 font-size: 35px;
             }
-        }
-
-        button {
-         margin-top: 30px;   
-         background-color: var(--Verdigris);   
         }
     `;

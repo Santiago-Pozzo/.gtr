@@ -3,16 +3,17 @@ import { FooterStyled, FooterLogoStyled, FooterNavListStyled, FooterList, Footer
 
 import  Logo  from '../../assets/images/logogtr.png'
 
-
 import { MdLocationPin } from "react-icons/md"
 import { IoLogoWhatsapp, IoLogoFacebook } from "react-icons/io"
 import { RiInstagramFill } from "react-icons/ri"
 import { BiSolidHome } from "react-icons/bi"
-
-
+import { NavLink } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <FooterStyled>
         <FooterLogoStyled src={Logo} alt="Logo" />
@@ -40,11 +41,13 @@ const Footer = () => {
             </FooterList>
 
             <FooterList>
+                <NavLink to="/">
+                    <FooterListLi whileTap={{scale: 0.95}}>
+                        <div><BiSolidHome/></div>  
+                        <span>Home</span>
+                    </FooterListLi>
+                </NavLink>
 
-                <FooterListLi whileTap={{scale: 0.95}}>
-                    <div><BiSolidHome/></div>  
-                    <span>Home</span>
-                </FooterListLi>
             </FooterList>
         </FooterNavListStyled>
     </FooterStyled>

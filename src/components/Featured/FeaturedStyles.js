@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const FeaturedWrapperStyled = styled.section`
-    margin-top: 35px;
+    margin: 20px 0 30px;
     width:100%;
     height: 200px;
     background-color: var(--Black);   

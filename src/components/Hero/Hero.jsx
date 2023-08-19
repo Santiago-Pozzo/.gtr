@@ -1,26 +1,22 @@
 import React from 'react'
 import { HeroContainerStyled, HeroImgContainer, HeroTextContainerStyled } from './HeroStyled'
-import { ButtonStyled } from '../Button/ButtonStyles'
-import { useNavigate } from 'react-router-dom'
 
 const Hero = () => {
-  const navigate = useNavigate();
 
   return (
-    <HeroContainerStyled>
+    <>
+      <HeroContainerStyled>
         <HeroImgContainer/>
                   
         <HeroTextContainerStyled>
             <h1>¡Tu guitarra te está esperando! </h1>
             <p>Buscala en nuestra tienda y encontrá las mejores marcas con los mejores precios </p>
 
-            <ButtonStyled 
-            whileTap={{scale: 0.95}}
-            onClick={()=> navigate("/products")}
-            >Entrá a nuestra tienda
-            </ButtonStyled>
+          
         </HeroTextContainerStyled>
-    </HeroContainerStyled>
+      </HeroContainerStyled>
+    </>
+
   )
 }
 
