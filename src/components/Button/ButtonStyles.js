@@ -11,6 +11,10 @@ export const ButtonStyled = styled(motion.button)`
     color: var(--Black-olive);
     font-weight: 400;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 18px;
@@ -28,5 +32,12 @@ export const ButtonStyled = styled(motion.button)`
     @media (min-width: 760px) {
         font-size: 25px;
         padding: 10px 35px;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 5px;
     }
 `;

@@ -8,18 +8,18 @@ export const NavbarContainerStyled = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-
+    
     @media (min-width: 760px) {
             height: 110px;
         }
 `;
 
     export const NabvarLogoContainerStyled = styled.img`
-        height: 100px;
+        margin-left: 5px;
+        height: 80px;
 
         @media (min-width: 760px) {
-            height: 130px;
+            height: 110px;
         }
      `;
 
@@ -78,8 +78,8 @@ export const NavbarContainerStyled = styled.header`
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            padding: 8px;
-            gap: 5px;
+            padding: 8px 3px;
+            gap: 1px;
         }
 
     `;
@@ -100,12 +100,12 @@ export const NavbarContainerStyled = styled.header`
             background-color: var(--Black-olive);
             }
 
-            @media (min-width: 1040px) {
+            @media (min-width: 760px) {
                 font-size: 15px;
             }
 
             @media (min-width: 1040px) {
-                font-size: 15px;
+                font-size: 17px;
             }
             
             div {

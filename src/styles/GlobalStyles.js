@@ -17,11 +17,13 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     html {
+        width:100vw;
+        height: 100vh;
         scroll-behavior: smooth;
     }
 
     body {
-    /* width: 100vw;     */
+    width: 100vw;    
     margin: 0;
     padding: 0;
     background: var(--Black-olive);
@@ -36,9 +38,7 @@ export const GlobalStyles = createGlobalStyle`
     color: var(--Snow);
     }
 
-    /* a:visited {
-    color: white;
-    } */
+
     
     li {
     list-style: none;
@@ -63,7 +63,7 @@ export const GlobalStyles = createGlobalStyle`
         display: none;
     }
 
-    /* * {
+     /* * {
         border: solid 1px red;
-    } */
+    }  */
 `;

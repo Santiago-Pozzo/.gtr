@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 
 export const FooterStyled = styled.footer`
     width: 100%;
+    bottom: 0;
     background-color: var(--Black);   
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px 20px; 
     column-gap: 50px;
 
 
