@@ -9,6 +9,11 @@ const MenuDespegable = ({ children }) => {
 
   const reducer = (state, action) => {
     switch (action.type) {
+      case "closeMenu":
+        return {
+          ...state,
+          isActive: false,
+        };
       case "toggleMenu":
         return {
           ...state,

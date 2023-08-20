@@ -62,10 +62,10 @@ export const NavbarContainerStyled = styled.header`
             z-index: 2;
             background: var(--Black);
             position: fixed;
-            top: 80px;
+            top: 0;
             right: 0;
             height: 100vh;
-            padding: 30px 10px;
+            padding: 100px 10px;
             gap: 15px;
         }
 
