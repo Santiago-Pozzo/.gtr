@@ -28,6 +28,11 @@ export const NavbarContainerStyled = styled.header`
         text-align: center;
         align-items: center;
         gap: 10px;
+        padding: 5px 15px;
+
+        @media (min-width: 1040px) {
+            padding: 5px 25px;
+        }
     `;
 
         export const NavbarBtnStyled = styled.button`
@@ -49,7 +54,7 @@ export const NavbarContainerStyled = styled.header`
             `;
 
             export const NavbarCartBtnStyled = styled(NavbarBtnStyled)`
-                display: none;
+                display: flex;
             `;
 
     export const NavbarLinksContainerStyled = styled.div`
@@ -78,7 +83,7 @@ export const NavbarContainerStyled = styled.header`
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            padding: 8px 3px;
+            padding: 8px 1px;
             gap: 1px;
         }
 
@@ -101,11 +106,11 @@ export const NavbarContainerStyled = styled.header`
             }
 
             @media (min-width: 760px) {
-                font-size: 15px;
+                font-size: 13px;
             }
 
             @media (min-width: 1040px) {
-                font-size: 17px;
+                font-size: 15px;
             }
             
             div {

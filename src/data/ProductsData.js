@@ -1,25 +1,9 @@
-//import fenderTelecaster from 'E:/Curso programación web NUCBA/MODULO 3 - React/.gtr Proyecto React/src/assets/images/Telecaster.jpg'
-//import gibsonLesPaul from '../assets/images/lespaul.webp'
-//import fenderJazzBass from '../assets/images/jazzbass.jpg'
-//import taylorBaby from '../assets/images/taylorbaby.jpg'
-//import alpujarra300Kecm from '../assets/images/alpujarra300Kecm.jpg'
-//import washburnTaurusT25 from '../assets/images/washburnTaurusT25.webp'
-//import  fenderRumble200 from '../assets/images/fenderRumble200.webp'
-//import marshallCode100 from '../assets/images/marshallCode100.jpg'
-//import peavey6505Valvular from '../assets/images/peavey.webp'
-//import bossDS1 from '../assets/images/bossDS1.jpg'
-//import bossTR2 from '../assets/images/bossTR2.jpg'
-//import moerPureOctave from '../assets/images/moerPureOctave.jpg'
-//import ernieBall4039 from '../assets/images/ernieBallCorrea.webp'
-//import flangerFl011 from '../assets/images/flanger-fl-011.jpg'
-//import parkerEvolution from '../assets/images/parkerEvolution.webp'
-
-
 export const products = [
     {
         id: 0,
         cat: "Eléctrica",
         brand: "Fender",
+        brandLogo: "https://1000marcas.net/wp-content/uploads/2020/02/Fender-Logo-1.png",
         model: "Telecaster",
         description: "Fender Standard Telecaster de aliso butterscotch blonde con diapasón de arce",
         //img: "fenderTelecaster",
@@ -31,6 +15,7 @@ export const products = [
         id: 1,
         cat: "Eléctrica",
         brand: "Gibson",
+        brandLogo: "https://logos-world.net/wp-content/uploads/2020/12/Gibson-Symbol.png",
         model: "Les Paul",
         description: "Gibson Les Paul Standard 50s de caoba vintage sunburst brillante con diapasón de laurel indio",
         //img: gibsonLesPaul,
@@ -42,6 +27,7 @@ export const products = [
         id: 2,
         cat: "Bajo",
         brand: "Fender",
+        brandLogo: "https://1000marcas.net/wp-content/uploads/2020/02/Fender-Logo-1.png",
         model: "Jazz Bass",
         description: "Fender Player Jazz Bass Butter. Material del cuerpo: Aliso (Alder)",
         //img: fenderJazzBass,
@@ -53,6 +39,7 @@ export const products = [
         id: 3,
         cat: "Acústica",
         brand: "Taylor",
+        brandLogo: "https://i.etsystatic.com/34531699/r/il/6654b7/4031104545/il_570xN.4031104545_a2e6.jpg",
         model: "Baby",
         description: "Big Baby Taylor para diestros natural ébano barniz",
         //img: taylorBaby,
@@ -64,6 +51,7 @@ export const products = [
         id: 4,
         cat: "Acústica",
         brand: "Alpujarra",
+        brandLogo: "https://www.heavenimagenes.com/heavencommerce/c98a269a-2842-4da0-a6e5-e0e155d29966/logos/v2/LA%20ALPUJARRA/96.jpg",
         model: "300Kecm",
         description: "Gitarra criolla clásica para diestros natural, tapa de abeto",
         //img: alpujarra300Kecm,
@@ -75,6 +63,7 @@ export const products = [
         id: 5,
         cat: "Bajo",
         brand: "Washburn",
+        brandLogo: "https://ih1.redbubble.net/image.656754762.1756/flat,750x,075,f-pad,750x1000,f8f8f8.u3.jpg",
         model: "Taurus T-25",
         description: "Bajo de 5 cuerdas. 24 trastes. Cuerpo de caoba, mastil de Caoba/Maple",
         //img: washburnTaurusT25,
@@ -86,6 +75,7 @@ export const products = [
         id: 6,
         cat: "Amplificador",
         brand: "Fender",
+        brandLogo: "https://1000marcas.net/wp-content/uploads/2020/02/Fender-Logo-1.png",
         model: "Rumble 200",
         description: "Amplificador Fender Rumble Series 200 Transistor para bajo de 200W color negro/plata 220V",
         //img: fenderRumble200,
@@ -97,6 +87,7 @@ export const products = [
         id: 7,
         cat: "Amplificador",
         brand: "Marshal",
+        brandLogo: "https://i.pinimg.com/originals/1a/70/96/1a7096822b35c33b3388ab42bc4e6abb.png",
         model: "Code 100",
         description: "Amplificador de guitarra 100 watts. Bluetooth. USB",
         //img: peavey6505Valvular,
@@ -108,6 +99,7 @@ export const products = [
         id: 8,
         cat: "Amplificador",
         brand: "Peavey",
+        brandLogo: "https://cdn.worldvectorlogo.com/logos/peavey-logo.svg",
         model: "6505 Valvular",
         description: "Amplificador de guitarra valvular. Combo. 60 watts",
         //img: peavey6505Valvular,
@@ -119,6 +111,7 @@ export const products = [
         id: 9,
         cat: "Pedal",
         brand: "Boss",
+        brandLogo: "https://novaeramusica.com/img/cms/Boss+Logo.jpg",
         model: "DS1",
         description: "Distorsión analógica. Tónos clásicos. Ataque de bordes duros",
         //img: bossDS1,
@@ -130,6 +123,7 @@ export const products = [
         id: 10,
         cat: "Pedal",
         brand: "Boss",
+        brandLogo: "https://novaeramusica.com/img/cms/Boss+Logo.jpg",
         model: "TR2",
         description: "Pedal de Efecto para Guitarra Tremolo",
         //img: bossTR2,
@@ -141,6 +135,7 @@ export const products = [
         id: 11,
         cat: "Pedal",
         brand: "Moer",
+        brandLogo: "https://www.qloud.ar/SITES/IMG/shop-grey-music-07-2019/97_12-10-2022-05-10-55-mooer-web.png",
         model: "Pure Octave",
         description: "Pedal de Efecto Octavador Polifonico.",
         //img: moerPureOctave,
@@ -152,6 +147,7 @@ export const products = [
         id: 12,
         cat: "Accesorios",
         brand: "Ernie Ball",
+        brandLogo: "https://1000marcas.net/wp-content/uploads/2021/04/Ernie-Ball-Logo.png",
         model: "4039",
         description: "Correa de guitarra con porta púas",
         //img: ernieBall4039,
@@ -163,6 +159,7 @@ export const products = [
         id: 13,
         cat: "Accesorios",
         brand: "Flanger",
+        brandLogo: "https://http2.mlstatic.com/D_NQ_NP_964769-MLA48278935394_112021-O.webp",
         model: "Fl 011",
         description: "Soporte plegable para todas las tallas de guitarra acústica, guitarra eléctrica, guitarra y bajo",
         //img: flangerFl011,
@@ -174,10 +171,55 @@ export const products = [
         id: 14,
         cat: "Accesorios",
         brand: "Parquer",
+        brandLogo: "https://www.heavenimagenes.com/heavencommerce/c98a269a-2842-4da0-a6e5-e0e155d29966/logos/v2/PARQUER/341.jpg",
         model: "Evolution Funda",
         description: "Funda para guitarra electrica acolchada. Mochila",
         //img: parkerEvolution,
         img: "https://http2.mlstatic.com/D_NQ_NP_906829-MLA31913066571_082019-O.webp",
         price: 47000,
     },
+
+    {
+        id: 15,
+        cat: "Electricas",
+        brand: "Sehcter",
+        brandLogo: "https://www.clipartmax.com/png/middle/476-4769064_schecter-guitar-research-or-commonly-known-as-just-schecter-logo-png.png",
+        model: "Platinum",
+        description: "Series C-1 FR S de caoba crimson red burst satin con diapasón de palo de rosa.",
+        img: "https://www.lvguitars.com/media/catalog/product/cache/1c3ab8a6af133a955d60ef5395268832/image/10394acc5/schecter-c-1-platinum-electric-guitar-satin-black-b-stock-0278-sku-number-schecter810-b-0278.jpg",
+        price: 47000,
+    },
 ];
+
+export const TotalProducts = products.length;
+
+export const ProductsData = products.reduce ((acc, product) => {
+        if (!acc[product.cat]){
+            acc[product.cat] = [];
+        }
+
+        acc[product.cat] = [...acc[product.cat], product];
+
+        return acc;
+        },  
+{});
+
+export const ProductsDataOrderByBrand = products.reduce ((acc, product) => {
+        if (!acc[product.brand]){
+            acc[product.brand] = [];
+        }
+
+        acc[product.brand] = [...acc[product.brand], product];
+
+        return acc;
+        },  
+{});
+    
+export const Brands = products.reduce ((entrie, product)=> {
+    const { brand, brandLogo} = product;
+    if (!entrie[brand]){
+        entrie[brand] = {brand, brandLogo};
+    }
+    return entrie;
+    },
+{});

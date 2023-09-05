@@ -1,70 +1,54 @@
 import React from 'react'
-import { CategoriesWrapperStyled, CategoryCardStyled, CategoriesTitleStyled } from './CategoriesWrapperStyles'
+import { CategoriesWrapperStyled, BrandWrapperStyled, CategoryCardStyled } from './CategoriesWrapperStyles'
 import CategoryCard from './CategoryCard'
+import { Categories } from '../../data/Categories'
+import { Brands, ProductsDataOrderByBrand } from '../../data/ProductsData'
+import BrandCard from './BrandCard'
+import { useContext } from 'react'
+import { Context } from "../../Contexts/CategoriesBrandContext"
 
-import { BiSolidGuitarAmp } from "react-icons/bi"
-import { TbGuitarPickFilled } from "react-icons/tb"
-import { GiGuitarBassHead, GiGuitarHead, GiMusicalNotes } from "react-icons/gi"
-import { FaGuitar } from "react-icons/fa"
-import { RiHardDrive3Fill } from "react-icons/ri"
-import { AiFillTrademarkCircle } from "react-icons/ai"
-
-
-
+import {AiFillTrademarkCircle} from "react-icons/ai"
+import { Provider } from 'react-redux'
 
 const CategoriesWrapper = () => {
+  const { state, dispatch } = useContext(Context);
+
   return (
-    <>
+    //<Provider>
+    <>  
         <CategoriesWrapperStyled>
+            {
+                Categories.map((category) => {
+                    return <CategoryCard 
+                            {...category} 
+                            key={category.id}
+                            />
+                })
+            }
             <CategoryCardStyled
-            whileTap={{scale:0.95}}>
-                <GiGuitarHead/>
-                <h2>Eléctricas</h2>
-            </CategoryCardStyled>
-
-            <CategoryCardStyled
-            whileTap={{scale:0.95}}>
-                <FaGuitar/>
-                <h2>Acústicas</h2>
-            </CategoryCardStyled>
-
-            <CategoryCardStyled
-            whileTap={{scale:0.95}}>
-                <GiGuitarBassHead />
-                <h2>Bajos</h2>
-            </CategoryCardStyled>
-
-            <CategoryCardStyled
-            whileTap={{scale:0.95}}>
-                <BiSolidGuitarAmp/>
-                <h2>Amplis</h2>
-            </CategoryCardStyled>
-
-            <CategoryCardStyled
-            whileTap={{scale:0.95}}>
-                <RiHardDrive3Fill/>
-                <h2>Pedales</h2>
-            </CategoryCardStyled>
-
-            <CategoryCardStyled
-            whileTap={{scale:0.95}}>
-                <TbGuitarPickFilled/>
-                <h2>Accesorios</h2>
-            </CategoryCardStyled>
-
-            <CategoryCardStyled
-            whileTap={{scale:0.95}}>
-                <AiFillTrademarkCircle/>
-                <h2>Marcas</h2>
-            </CategoryCardStyled>
-
-            <CategoryCardStyled
-            whileTap={{scale:0.95}}>
-                <GiMusicalNotes/>
-                <h2>Ver todo</h2>
+              onClick={ 
+                () => dispatch({ type: "toggleMenu" })
+              }
+            >
+              <AiFillTrademarkCircle/>
+              <h2>Marcas</h2>
             </CategoryCardStyled>
         </CategoriesWrapperStyled>
-    </>
+
+        <BrandWrapperStyled
+         className={state.isActive ? "active" : ""}
+        >
+        {
+          Object.entries(Brands).map(([brand, info])=>{
+            return <BrandCard
+                     key={brand}
+                     {...info}
+                   />
+          })
+        }
+        </BrandWrapperStyled>
+      </>
+   // </Provider>
     
   )
 }

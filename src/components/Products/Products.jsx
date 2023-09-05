@@ -1,37 +1,25 @@
 import React from 'react'
-import  { products } from '../../data/ProductsData'
-import { CardProductStyled, ProducsWraperStyled, ProductsBoxStyled, CardImg, CardBottomBox,CardCategory, CardBrand, CardModel, CardDescription, CardInfoBox, ButtonBoxStyled } from './ProductsStyles'
+import  { ProductsData, ProductsDataOrderByBrand } from '../../data/ProductsData'
+import { ProducsWraperStyled, ProductsBoxStyled, ButtonBoxStyled } from './ProductsStyles'
+import  ProductCard  from "./ProductCard"
+import { BrandMenu } from '../../Contexts/CategoriesBrandContext'
 
 import  { ButtonStyled }  from '../Button/ButtonStyles'
 import Categories from "../Categories/CategoriesWrapper"
 
 const Products = () => {
+
   return (
-    <ProducsWraperStyled>
+    <BrandMenu>
+     <ProducsWraperStyled>
         <Categories /> 
+
         <ProductsBoxStyled>
             {
-                products.map((product)=>{
-                    return <CardProductStyled key={product.id}>
-                                <CardCategory>{product.cat}</CardCategory>
-                                
-                                <CardImg> 
-                                    <img src={product.img} alt={product.model} />
-                                </CardImg>
-                                
-                                <CardInfoBox>
-                                    <CardBrand>{product.brand}</CardBrand>
-                                    <CardModel>{product.model}</CardModel>
-                                    <CardDescription>{product.description}</CardDescription>
-
-                                    <CardBottomBox>
-                                        <p>${product.price}</p>
-                                        <ButtonStyled whileTap={{scale: 0.95}}>
-                                            Agregar
-                                        </ButtonStyled>
-                                    </CardBottomBox>
-                                </CardInfoBox>
-                           </CardProductStyled> 
+                Object.entries(ProductsData).map(([,prods])=>{
+                    return prods.map((prod)=>{
+                        return <ProductCard {...prod} key={prod.id}/>
+                    })
                 })
             }
         </ProductsBoxStyled>
@@ -45,7 +33,9 @@ const Products = () => {
                 Ver menos
             </ButtonStyled>
         </ButtonBoxStyled>
-    </ProducsWraperStyled>
+     </ProducsWraperStyled>
+    </BrandMenu>
+
   )
 }
 

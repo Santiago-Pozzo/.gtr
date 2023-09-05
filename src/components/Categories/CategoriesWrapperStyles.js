@@ -12,13 +12,29 @@ export const CategoriesWrapperStyled = styled.section`
     max-width: 80%;
     background-color: var(--Verdigris);
     border-radius: 20px;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     padding: 15px;
     gap: 8px;
+`;
+
+export const BrandWrapperStyled = styled.div`
+    display: none;
+
+    &.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px;
+        gap: 5px;
+        max-width: 80%;
+        background-color: var(--Verdigris);
+        border-radius: 20px;
+    }
+
 `;
 
     export const CategoryCardStyled = styled(motion.div)`
@@ -34,6 +50,11 @@ export const CategoriesWrapperStyled = styled.section`
 
         &:hover {
             background-color: var(--Black);
+        }
+
+        &.selected {
+            background-color: var(--Black);
+            //border: solid 1px red;
         }
 
         @media (min-width: 1020px) {
@@ -63,3 +84,56 @@ export const CategoriesWrapperStyled = styled.section`
                 }
             }
     `;
+
+    export const BrandCardStyled = styled(motion.div)`
+    cursor: pointer;
+    width: 95px;
+    display: flex;
+    //flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    background-color: var(--Black-olive);
+    border-radius: 10px;
+    padding: 4px 7px;
+    gap: 7px;
+
+    &:hover {
+        background-color: var(--Black);
+    }
+
+    @media (min-width: 1020px) {
+        width: 105px;
+        padding: 6px 10px;
+    }
+
+        :first-child {
+            width: 30px;
+            height: 30px;
+            background-color: var(--Snow);
+            border-radius:50%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            @media (min-width: 1020px) {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        img {
+            width: 50%;
+            height: 50%;
+        }
+
+        h3 {
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-weight: 100;
+            font-size: 16px;
+            margin: 0;
+
+            @media (min-width: 1020px) {
+                font-size: 18px;
+            }
+        }
+`;

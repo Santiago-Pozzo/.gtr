@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { Context } from '../../Contexts/HeaderContext'
 import { NavbarLinksContainerStyled, NavbarLinkStyled,  NavbarLinkIconStyled} from './NavbarStyles'
 import {motion} from "framer-motion"
+
 //Import Icons---
 import {GiGuitarBassHead} from "react-icons/gi"
 import {BiSolidHome} from "react-icons/bi"

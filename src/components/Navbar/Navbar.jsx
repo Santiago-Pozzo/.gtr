@@ -5,6 +5,7 @@ import { NavbarContainerStyled, NabvarLogoContainerStyled,NavbarMenuBtnStyled, N
 import {motion} from "framer-motion"
 import { NavLink } from 'react-router-dom'
 import NavbarLinksContainer from "./NavbarLinksContainer"
+
 //Import Icons---
 import {GiHamburgerMenu} from "react-icons/gi"
 import {FaShoppingCart} from "react-icons/fa"
@@ -16,7 +17,7 @@ const Navbar = () => {
   const { state, dispatch } = useContext(Context);
 
   window.addEventListener("scroll", () => {dispatch({ type: "closeMenu" })});
-  window.addEventListener("resize", () => {dispatch({ type: "closeMenu" })});
+  //window.addEventListener("resize", () => {dispatch({ type: "closeMenu" })});
 
   return (
     <NavbarContainerStyled> 
