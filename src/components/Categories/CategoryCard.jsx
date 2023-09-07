@@ -5,14 +5,17 @@ import { useContext } from 'react'
 import { Context } from "../../Contexts/CategoriesBrandContext"
 import { useSelector, useDispatch } from "react-redux"
 import { selectCategory } from '../../Redux/Categories/CategoriesSlice'
+import { setNullBrand } from '../../Redux/Categories/BrandsSlice'
 
 const CategoryCard = ({ icon, category }) => {
   const dispatchSelectCat = useDispatch();
+  const dispatchNullBrand = useDispatch()
   const selectedCategory = useSelector((state)=> state.categories.selected);
 
   const handleClick = (cat) => {
     dispatch({ type: "closeMenu" });
     dispatchSelectCat(selectCategory(cat)); 
+    dispatchNullBrand(setNullBrand());
   };
 
 

@@ -50,6 +50,8 @@ export const BrandWrapperStyled = styled.div`
 
         &:hover {
             background-color: var(--Black);
+            border: solid 1px;
+            border-color:var(--Snow);
         }
 
         &.selected {
@@ -101,6 +103,8 @@ export const BrandWrapperStyled = styled.div`
 
     &:hover {
         background-color: var(--Black);
+        border: solid 1px;
+        border-color:var(--Snow); //var(--Hollywood-cerise);
     }
 
     @media (min-width: 1020px) {

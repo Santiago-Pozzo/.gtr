@@ -1,7 +1,7 @@
 export const products = [
     {
         id: 0,
-        cat: "Eléctrica",
+        cat: "Eléctricas",
         brand: "Fender",
         brandLogo: "https://1000marcas.net/wp-content/uploads/2020/02/Fender-Logo-1.png",
         model: "Telecaster",
@@ -13,7 +13,7 @@ export const products = [
 
     {
         id: 1,
-        cat: "Eléctrica",
+        cat: "Eléctricas",
         brand: "Gibson",
         brandLogo: "https://logos-world.net/wp-content/uploads/2020/12/Gibson-Symbol.png",
         model: "Les Paul",
@@ -25,7 +25,7 @@ export const products = [
 
     {
         id: 2,
-        cat: "Bajo",
+        cat: "Bajos",
         brand: "Fender",
         brandLogo: "https://1000marcas.net/wp-content/uploads/2020/02/Fender-Logo-1.png",
         model: "Jazz Bass",
@@ -37,7 +37,7 @@ export const products = [
 
     {
         id: 3,
-        cat: "Acústica",
+        cat: "Acústicas",
         brand: "Taylor",
         brandLogo: "https://i.etsystatic.com/34531699/r/il/6654b7/4031104545/il_570xN.4031104545_a2e6.jpg",
         model: "Baby",
@@ -49,7 +49,7 @@ export const products = [
 
     {
         id: 4,
-        cat: "Acústica",
+        cat: "Acústicas",
         brand: "Alpujarra",
         brandLogo: "https://www.heavenimagenes.com/heavencommerce/c98a269a-2842-4da0-a6e5-e0e155d29966/logos/v2/LA%20ALPUJARRA/96.jpg",
         model: "300Kecm",
@@ -61,7 +61,7 @@ export const products = [
 
     {
         id: 5,
-        cat: "Bajo",
+        cat: "Bajos",
         brand: "Washburn",
         brandLogo: "https://ih1.redbubble.net/image.656754762.1756/flat,750x,075,f-pad,750x1000,f8f8f8.u3.jpg",
         model: "Taurus T-25",
@@ -73,7 +73,7 @@ export const products = [
 
     {
         id: 6,
-        cat: "Amplificador",
+        cat: "Amplis",
         brand: "Fender",
         brandLogo: "https://1000marcas.net/wp-content/uploads/2020/02/Fender-Logo-1.png",
         model: "Rumble 200",
@@ -85,7 +85,7 @@ export const products = [
 
     {
         id: 7,
-        cat: "Amplificador",
+        cat: "Amplis",
         brand: "Marshal",
         brandLogo: "https://i.pinimg.com/originals/1a/70/96/1a7096822b35c33b3388ab42bc4e6abb.png",
         model: "Code 100",
@@ -97,7 +97,7 @@ export const products = [
 
     {
         id: 8,
-        cat: "Amplificador",
+        cat: "Amplis",
         brand: "Peavey",
         brandLogo: "https://cdn.worldvectorlogo.com/logos/peavey-logo.svg",
         model: "6505 Valvular",
@@ -109,7 +109,7 @@ export const products = [
 
     {
         id: 9,
-        cat: "Pedal",
+        cat: "Pedales",
         brand: "Boss",
         brandLogo: "https://novaeramusica.com/img/cms/Boss+Logo.jpg",
         model: "DS1",
@@ -121,7 +121,7 @@ export const products = [
 
     {
         id: 10,
-        cat: "Pedal",
+        cat: "Pedales",
         brand: "Boss",
         brandLogo: "https://novaeramusica.com/img/cms/Boss+Logo.jpg",
         model: "TR2",
@@ -133,7 +133,7 @@ export const products = [
 
     {
         id: 11,
-        cat: "Pedal",
+        cat: "Pedales",
         brand: "Moer",
         brandLogo: "https://www.qloud.ar/SITES/IMG/shop-grey-music-07-2019/97_12-10-2022-05-10-55-mooer-web.png",
         model: "Pure Octave",

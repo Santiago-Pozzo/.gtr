@@ -14,13 +14,19 @@ export const brandsSlice = createSlice(
             selectBrand: (state, action) => {
                 return {
                     ...state,
-                    selected: action.payload
+                    selected: action.payload !== state.selected ?
+                    action.payload : null
                 }
-            }            
+            },            
+            setNullBrand: (state, action) => {
+                return {
+                   ...state,
+                   selected:  null
+                }
+            }
         }
-    }
-)
+    })
 
-export const { selectBrand } = brandsSlice.actions;
+export const { selectBrand, setNullBrand } = brandsSlice.actions;
 
 export default brandsSlice.reducer;

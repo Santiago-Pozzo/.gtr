@@ -1,8 +1,6 @@
 import React from 'react'
-import { CategoriesWrapperStyled, BrandWrapperStyled, CategoryCardStyled, BrandCardStyled } from './CategoriesWrapperStyles'
+import { CategoriesWrapperStyled, BrandWrapperStyled, CategoryCardStyled } from './CategoriesWrapperStyles'
 import CategoryCard from './CategoryCard'
-import { Categories } from '../../data/Categories'
-import { Brands, ProductsDataOrderByBrand } from '../../data/ProductsData'
 import BrandCard from './BrandCard'
 import { useContext } from 'react'
 import { Context } from "../../Contexts/CategoriesBrandContext"
@@ -15,6 +13,8 @@ const CategoriesWrapper = () => {
   const { state, dispatch } = useContext(Context);
   const dispatchSelectCat = useDispatch();
   const selectedCategory = useSelector((state)=> state.categories.selected);
+  const {categories} = useSelector((state)=> state.categories);
+  const {brands} = useSelector((state)=> state.brands);
 
   const handleClick = (cat) => {
     dispatch({ type: "toggleMenu" });
@@ -25,7 +25,7 @@ const CategoriesWrapper = () => {
     <>  
         <CategoriesWrapperStyled>
             {
-              Categories.map((category) => {
+              categories.map((category) => {
                 return <CategoryCard 
                        {...category} 
                        key={category.id}
@@ -48,7 +48,7 @@ const CategoriesWrapper = () => {
            className={state.isActive ? "active" : ""}
           >
           {
-            Object.values(Brands).map((entrie)=>{
+            Object.values(brands).map((entrie)=>{
               return <BrandCard
                       key={entrie.brand}
                       {...entrie}

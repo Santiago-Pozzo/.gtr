@@ -14,7 +14,8 @@ export const categoriesSlice = createSlice(
             selectCategory: (state, action) => {
                 return {
                     ...state,
-                    selected: action.payload 
+                    selected: action.payload !== state.selected ?
+                    action.payload :"Ver todo"
                 }
             }            
         }
