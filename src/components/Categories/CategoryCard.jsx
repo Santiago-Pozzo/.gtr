@@ -8,8 +8,8 @@ import { selectCategory } from '../../Redux/Categories/CategoriesSlice'
 
 const CategoryCard = ({ icon, category }) => {
   const dispatchSelectCat = useDispatch();
-  const selectedCategory = useSelector((state)=> state.selected);
-  
+  const selectedCategory = useSelector((state)=> state.categories.selected);
+
   const handleClick = (cat) => {
     dispatch({ type: "closeMenu" });
     dispatchSelectCat(selectCategory(cat)); 

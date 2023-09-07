@@ -1,33 +1,42 @@
 import React from 'react'
-import { CategoriesWrapperStyled, BrandWrapperStyled, CategoryCardStyled } from './CategoriesWrapperStyles'
+import { CategoriesWrapperStyled, BrandWrapperStyled, CategoryCardStyled, BrandCardStyled } from './CategoriesWrapperStyles'
 import CategoryCard from './CategoryCard'
 import { Categories } from '../../data/Categories'
 import { Brands, ProductsDataOrderByBrand } from '../../data/ProductsData'
 import BrandCard from './BrandCard'
 import { useContext } from 'react'
 import { Context } from "../../Contexts/CategoriesBrandContext"
+import { useSelector, useDispatch } from "react-redux"
+import { selectCategory } from '../../Redux/Categories/CategoriesSlice'
 
 import {AiFillTrademarkCircle} from "react-icons/ai"
-import { Provider } from 'react-redux'
 
 const CategoriesWrapper = () => {
   const { state, dispatch } = useContext(Context);
+  const dispatchSelectCat = useDispatch();
+  const selectedCategory = useSelector((state)=> state.categories.selected);
+
+  const handleClick = (cat) => {
+    dispatch({ type: "toggleMenu" });
+    dispatchSelectCat(selectCategory(cat)); 
+  };
 
   return (
-    //<Provider>
     <>  
         <CategoriesWrapperStyled>
             {
-                Categories.map((category) => {
-                    return <CategoryCard 
-                            {...category} 
-                            key={category.id}
-                            />
-                })
+              Categories.map((category) => {
+                return <CategoryCard 
+                       {...category} 
+                       key={category.id}
+                        />
+              })
             }
             <CategoryCardStyled
+              className={selectedCategory == "Marcas" ? "selected" : ""}
+              whileTap={{scale:0.95}}
               onClick={ 
-                () => dispatch({ type: "toggleMenu" })
+                () => handleClick("Marcas")
               }
             >
               <AiFillTrademarkCircle/>
@@ -35,21 +44,19 @@ const CategoriesWrapper = () => {
             </CategoryCardStyled>
         </CategoriesWrapperStyled>
 
-        <BrandWrapperStyled
-         className={state.isActive ? "active" : ""}
-        >
-        {
-          Object.entries(Brands).map(([brand, info])=>{
-            return <BrandCard
-                     key={brand}
-                     {...info}
-                   />
-          })
-        }
-        </BrandWrapperStyled>
+          <BrandWrapperStyled
+           className={state.isActive ? "active" : ""}
+          >
+          {
+            Object.values(Brands).map((entrie)=>{
+              return <BrandCard
+                      key={entrie.brand}
+                      {...entrie}
+                      />     
+              })
+          }
+          </BrandWrapperStyled>
       </>
-   // </Provider>
-    
   )
 }
 

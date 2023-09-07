@@ -217,9 +217,12 @@ export const ProductsDataOrderByBrand = products.reduce ((acc, product) => {
     
 export const Brands = products.reduce ((entrie, product)=> {
     const { brand, brandLogo} = product;
+    let id=0;
     if (!entrie[brand]){
-        entrie[brand] = {brand, brandLogo};
+        entrie[brand] = {brand, brandLogo, id};
+        id = id + 1;
     }
     return entrie;
     },
 {});
+

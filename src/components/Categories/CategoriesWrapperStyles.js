@@ -53,8 +53,7 @@ export const BrandWrapperStyled = styled.div`
         }
 
         &.selected {
-            background-color: var(--Black);
-            //border: solid 1px red;
+            background-color: var(--Black);            
         }
 
         @media (min-width: 1020px) {
@@ -89,13 +88,16 @@ export const BrandWrapperStyled = styled.div`
     cursor: pointer;
     width: 95px;
     display: flex;
-    //flex-direction: column;
     align-items: center;
     justify-content: left;
     background-color: var(--Black-olive);
     border-radius: 10px;
     padding: 4px 7px;
     gap: 7px;
+
+    &.selected {
+        background-color: var(--Black);            
+    }
 
     &:hover {
         background-color: var(--Black);
