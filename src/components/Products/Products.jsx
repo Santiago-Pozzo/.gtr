@@ -65,7 +65,7 @@ const Products = () => {
 
         
         {
-            !selectedCategory && (
+            !(selectedCategory ||selectedBrand)  && (
             <ButtonBoxStyled>
                 <ButtonStyled 
                 onClick={()=>setLimit((prevLimit)=> prevLimit - LIMIT_PRODUCTS)}

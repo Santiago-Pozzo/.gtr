@@ -10,6 +10,7 @@ import NavbarLinksContainer from "./NavbarLinksContainer"
 import {GiHamburgerMenu} from "react-icons/gi"
 import {FaShoppingCart} from "react-icons/fa"
 import  Logo  from '../../assets/images/logogtr.png'
+import Cart from '../Cart/Cart'
 //---------------
 
 
@@ -44,6 +45,8 @@ const Navbar = () => {
           </NavbarCartBtnStyled>
         </motion.div>   
       </NavbarLabelsBoxStyled>
+
+      <Cart/>
 
       <Overlay
        className={

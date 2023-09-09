@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer"
 import { useContext } from 'react'
 import {  Context } from '../../Contexts/HeaderContext'
 import { useLocation } from 'react-router-dom'
+import Modal from '../Modal/Modal'
 
 const Layout = ({children}) => {
   const {state, dispatch} = useContext(Context);
@@ -18,7 +19,7 @@ const Layout = ({children}) => {
   return (
     <LayoutWrapper>        
       <NavBar/>
-          
+      <Modal/>    
       <ContentContainerStyled>
         {children} 
       </ContentContainerStyled>
