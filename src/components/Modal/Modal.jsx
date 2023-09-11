@@ -2,20 +2,38 @@ import React from 'react'
 import { ModalStylded } from './ModalStyles'
 import Button from '../Button/Button'
 import { Overlay } from '../Navbar/NavbarStyles'
+import { useDispatch, useSelector } from 'react-redux'
+import { closeModal } from '../../Redux/AlertModal/ModalSlice'
 
-const Modal = ({className}) => {
-  console.log(className);
+const Modal = () => {
+  const dispatch = useDispatch();
+  const className = useSelector((state)=>state.modal.active);
+  const title = useSelector((state)=>state.modal.title);
+  const msg = useSelector((state)=>state.modal.msg);
+  const act = useSelector((state)=>state.modal.act);
+
+console.log(act);
+
   return (
     <>
       <ModalStylded
-       className={className}
+       className={className? "active": ""}
       >
-        <h2>Titulo de la alerta</h2>
-        <p>Pregunta si estás seguro</p>
+        <h2>{title}</h2>
+        <p>{msg}</p>
 
         <div>
-            <Button>Cancelar</Button>
-            <Button>Aceptar</Button>
+            <Button
+             onClick={()=>dispatch(closeModal())}
+            >Cancelar</Button>
+
+            <Button
+             onClick={()=>{
+               dispatch(act());
+               dispatch(closeModal())
+              }
+             }
+            >Aceptar</Button>
         </div>
       </ModalStylded>
 

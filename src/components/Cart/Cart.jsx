@@ -4,7 +4,7 @@ import { useDispatch, useSelector} from "react-redux"
 import { CartBtnBoxStyled, CartWrapperStyled, ProductBoxStyled, TotalBoxStyled } from './CartStyles'
 import CartProduct from './CartProduct'
 import Button from '../Button/Button'
-import { clearCart, closeCart } from "../../Redux/Cart/CartSlice"
+import { setModalAction, setModalMsg, setModalTitle, toggleModal } from '../../Redux/AlertModal/ModalSlice'
 
 
 const Cart = () => {
@@ -15,7 +15,7 @@ const Cart = () => {
     return (acc += item.price * item.quantity)
   }, 0)
 
-  return (
+   return (
     <CartWrapperStyled
      className={activeCart? "active" : ""}
     >
@@ -41,11 +41,29 @@ const Cart = () => {
       <CartBtnBoxStyled>
         <Button
          disabled = {!cartItems.length}
+         onClick = {
+          ()=>{
+            dispatch(setModalTitle("Finalizar compra"));
+            dispatch(setModalMsg("Estás por comprar: "
+            + cartItems.map((item)=>{
+              return item.quantity + " " + item.brand + " " + item.model+ " "
+            }) + "por un total de $" + total + "¿Deseas continuar?"))
+            dispatch(setModalAction("clearCart"))  
+            dispatch(toggleModal())          
+          }
+         }
         > Comprar </Button>
 
         <Button
          disabled = {!cartItems.length}
-         onClick={()=>dispatch(clearCart())}
+         onClick = {
+          ()=>{
+            dispatch(setModalTitle("Vaciar carrito"));
+            dispatch(setModalMsg("¿Deseas borrar todos los productos del carrito?"))
+            dispatch(setModalAction("clearCart"))  
+            dispatch(toggleModal())          
+          }
+         }
         > Vaciar </Button>
       </CartBtnBoxStyled>
     </CartWrapperStyled>

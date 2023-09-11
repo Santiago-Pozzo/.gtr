@@ -9,6 +9,7 @@ import brandsReducer from "./Categories/BrandsSlice"
 import productsReducer from "./Products/ProductsSlice"
 import cartReducer from "./Cart/CartSlice"
 import overlayReducer from "./Overlay/OverlaySlice"
+import modalReducer from "./AlertModal/ModalSlice"
 
 
 const reducers = combineReducers({
@@ -17,6 +18,7 @@ const reducers = combineReducers({
      products: productsReducer,
      cart: cartReducer,
      overlay: overlayReducer,
+     modal: modalReducer
  });
 
 const persistConfig = {

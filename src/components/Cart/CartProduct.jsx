@@ -3,6 +3,7 @@ import { CartControlsStyled, CartProductDescriptionStyled, CartProductImgStyled,
 import Button from "../Button/Button"
 import { useDispatch } from 'react-redux'
 import { addToCart, removeFromCart, removeItemUnit } from '../../Redux/Cart/CartSlice'
+import { setModalAction, setModalMsg, setModalTitle, toggleModal } from '../../Redux/AlertModal/ModalSlice'
 
 
 const CartProduct = ({id, brand, model, img, price, quantity }) => {
@@ -26,7 +27,7 @@ const CartProduct = ({id, brand, model, img, price, quantity }) => {
             <CartQuantityHandlerStyled>
                 <Button
                  disabled = { quantity===1 }
-                 onClick = {()=>{dispatch(removeItemUnit(id))}}                 
+                 onClick = {()=>{dispatch(removeItemUnit(id))}} 
                 > - </Button>
 
                 <p> {quantity} </p>
