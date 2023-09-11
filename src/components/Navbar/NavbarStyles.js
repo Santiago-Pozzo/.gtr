@@ -45,7 +45,11 @@ export const NavbarContainerStyled = styled.header`
             font-size: 24px;
             border: none;
             background: none;
-        `;
+
+            @media (min-width: 760px) {
+                font-size: 32px;
+            }
+            `;
 
             export const NavbarMenuBtnStyled = styled(NavbarBtnStyled)`
                 @media (min-width: 760px) {
@@ -55,6 +59,32 @@ export const NavbarContainerStyled = styled.header`
 
             export const NavbarCartBtnStyled = styled(NavbarBtnStyled)`
                 display: flex;
+                position: relative;
+
+                span {   
+                    display: none;
+
+                    &.active{
+                        display: block;
+                        height: 12px;
+                        width: 12px;
+                        font-size: 12px;
+                        color: var(--Black);
+                        padding: 2px;
+                        background-color: var(--Verdigris);
+                        border-radius: 50%;
+                        position: absolute;
+                        margin-bottom: 18px;
+                        margin-left: 15px; 
+
+                        @media (min-width: 760px) {
+                            height: 15px;
+                            width: 15px;
+                            font-size: 15px;
+                            padding: 3px 3px 4px;
+                        }
+                    }                
+                }
             `;
 
     export const NavbarLinksContainerStyled = styled.div`

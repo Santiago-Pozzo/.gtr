@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -29,6 +29,12 @@ const Navbar = () => {
     dispatchRedux(closeOverlay())
   });
   //window.addEventListener("resize", () => {dispatch({ type: "closeMenu" })});
+
+  useEffect(()=>{
+    dispatchRedux(closeCart());
+  },[]);
+
+  const totalCartProducts = useSelector((state)=> state.cart.cartItems).reduce((acc, item) => (acc += item.quantity), 0);
 
   return (
     <NavbarContainerStyled> 
@@ -62,6 +68,9 @@ const Navbar = () => {
            }
           >
             <FaShoppingCart/>
+            <span
+             className={totalCartProducts > 0? "active" :" "}
+            >{totalCartProducts}</span>
           </NavbarCartBtnStyled>
         </motion.div>   
       </NavbarLabelsBoxStyled>

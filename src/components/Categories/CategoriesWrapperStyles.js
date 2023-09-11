@@ -47,6 +47,8 @@ export const BrandWrapperStyled = styled.div`
         background-color: var(--Black-olive);
         border-radius: 12px;
         padding: 6px;
+        border: solid 1px;
+        border-color: var(--Black-olive);
 
         &:hover {
             background-color: var(--Black);
@@ -96,6 +98,8 @@ export const BrandWrapperStyled = styled.div`
     border-radius: 10px;
     padding: 4px 7px;
     gap: 7px;
+    border: solid 1px;
+    border-color: var(--Black-olive);
 
     &.selected {
         background-color: var(--Black);            

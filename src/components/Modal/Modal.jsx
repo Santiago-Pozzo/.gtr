@@ -12,8 +12,6 @@ const Modal = () => {
   const msg = useSelector((state)=>state.modal.msg);
   const act = useSelector((state)=>state.modal.act);
 
-console.log(act);
-
   return (
     <>
       <ModalStylded

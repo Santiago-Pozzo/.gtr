@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 import { useDispatch, useSelector} from "react-redux"
 
-import { CartBtnBoxStyled, CartWrapperStyled, ProductBoxStyled, TotalBoxStyled } from './CartStyles'
+import { CartBtnBoxStyled, CartWrapperStyled, EmptyCartMsg, ProductBoxStyled, TotalBoxStyled } from './CartStyles'
 import CartProduct from './CartProduct'
 import Button from '../Button/Button'
 import { setModalAction, setModalMsg, setModalTitle, toggleModal } from '../../Redux/AlertModal/ModalSlice'
@@ -26,7 +26,7 @@ const Cart = () => {
                return <CartProduct key={item.id} {...item}/>
               })   
           ) : (
-             <p>No hay productos en el carrito</p>
+             <EmptyCartMsg>No hay productos en el carrito</EmptyCartMsg>
           )
         }
       </ProductBoxStyled>

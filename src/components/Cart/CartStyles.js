@@ -5,7 +5,7 @@ export const CartWrapperStyled = styled.div`
     
     &.active {
         display: flex;
-        height: 100vh;
+        height: calc(100vh - 4rem);
         width: 50%;
         min-width: 220px;
         max-width: 400px;
@@ -16,10 +16,17 @@ export const CartWrapperStyled = styled.div`
         background: var(--Black);
         flex-direction: column;
         align-items: center;
-        padding: 10px 5px;
+        padding: 1rem 5px;
     }
     @media (min-width: 760px){
         top: 110px;
+    }
+`;
+
+export const EmptyCartMsg = styled.div`
+    font-size: 15px;
+    @media (min-width: 760px){
+        font-size: 20px;
     }
 `;
 
@@ -28,11 +35,12 @@ export const ProductBoxStyled = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    //justify-content: center;
     gap: 5px;
     overflow-y: scroll;   
-    max-height: 60%;
+    height: 65%;
     margin-bottom: 10px;
+    padding: 10px 0;
 `;
 
 
@@ -46,6 +54,10 @@ export const ProductBoxStyled = styled.div`
         align-items: center;
         justify-content: space-between;
         padding: 5px;
+
+        @media (min-width: 760px){
+            height: 72px;
+        }
     `;
 
     export const ProductInfoStyled = styled.div `
@@ -58,11 +70,17 @@ export const ProductBoxStyled = styled.div`
 
         export const CartProductImgStyled = styled.div`
             display: none;
+            
+            img {
+                height:90%;
+            }
 
             @media (min-width: 760px){
                 display: flex;
-                height: 55px;
-                width: 55px;
+                align-items: center;
+                justify-content: center;
+                height: 60px;
+                width: 60px;
                 background-color: white;
                 border-radius: 8px;
             }
@@ -101,6 +119,7 @@ export const ProductBoxStyled = styled.div`
                 margin: 0;
                 font-family: 'Yanone Kaffeesatz', sans-serif;
                 font-size: 15px;
+                letter-spacing: 1px;
 
                 @media (min-width: 760px){
                     font-size: 18px;           
@@ -124,8 +143,9 @@ export const ProductBoxStyled = styled.div`
             color: var(--Snow);
 
             @media (min-width: 760px){
-                font-size: 16px; 
-                padding: 7px 0;                   
+                font-size: 18px; 
+                letter-spacing: 1px;
+                padding: 11px 0 8px;                   
             }
         }
     `;    
@@ -135,7 +155,10 @@ export const ProductBoxStyled = styled.div`
             justify-content: space-between;
             align-items: center;
             gap: 3px;
-            //width: 80%;
+            width: 100%;
+            @media (min-width: 760px){
+                gap: 7px;                 
+            }
 
             button {
                 height: 15px;
@@ -145,7 +168,10 @@ export const ProductBoxStyled = styled.div`
                 font-size: 18px;
 
                 @media (min-width: 760px){
-                    font-size: 22px;                    
+                    font-size: 25px; 
+                    padding: 5px 0 3px; 
+                    height: 19px;
+                    width: 19px;                  
                 }
             }
 
@@ -166,6 +192,10 @@ export const ProductBoxStyled = styled.div`
         font-family: 'Archivo Narrow', sans-serif;
         font-size: 15px;  
         font-weight: 400; 
+
+        @media (min-width: 760px){
+            font-size: 18px;                    
+        }
     `;
 
     export const TotalBoxStyled = styled.div`
