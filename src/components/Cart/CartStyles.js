@@ -2,21 +2,21 @@ import styled from "styled-components"
 
 export const CartWrapperStyled = styled.div`
     display: none;
-    height: 100vh;
-    width: 50%;
-    min-width: 220px;
-    max-width: 400px;
-    position: fixed;
-    top: 800px;    
-    right: 0;
-    z-index: 2;
-    background: var(--Black);
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 5px;
     
     &.active {
         display: flex;
+        height: 100vh;
+        width: 50%;
+        min-width: 220px;
+        max-width: 400px;
+        position: fixed;
+        top: 80px;    
+        right: 0;
+        z-index: 2;
+        background: var(--Black);
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 5px;
     }
     @media (min-width: 760px){
         top: 110px;
@@ -169,13 +169,18 @@ export const ProductBoxStyled = styled.div`
     `;
 
     export const TotalBoxStyled = styled.div`
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        background-color: var(--Verdigris);
-        gap: 15px;
-        padding: 6px 0;
+        display: none;
+
+        &.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: var(--Verdigris);
+            gap: 15px;
+            padding: 6px 0;
+        }
+
 
         h2 {
             font-family: 'Archivo Narrow', sans-serif;

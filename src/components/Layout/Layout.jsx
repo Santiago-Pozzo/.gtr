@@ -19,7 +19,9 @@ const Layout = ({children}) => {
   return (
     <LayoutWrapper>        
       <NavBar/>
-      <Modal/>    
+      <Modal
+       //className="active"
+      />    
       <ContentContainerStyled>
         {children} 
       </ContentContainerStyled>

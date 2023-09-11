@@ -1,5 +1,8 @@
 import React from 'react'
 import { useContext } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { closeOverlay, toggleOverlay } from '../../Redux/Overlay/OverlaySlice'
 import { Context } from '../../Contexts/HeaderContext'
 import { NavbarContainerStyled, NabvarLogoContainerStyled,NavbarMenuBtnStyled, NavbarCartBtnStyled, NavbarLabelsBoxStyled, Overlay } from "./NavbarStyles"
 import {motion} from "framer-motion"
@@ -11,13 +14,20 @@ import {GiHamburgerMenu} from "react-icons/gi"
 import {FaShoppingCart} from "react-icons/fa"
 import  Logo  from '../../assets/images/logogtr.png'
 import Cart from '../Cart/Cart'
+import { closeCart, toggleCart } from '../../Redux/Cart/CartSlice'
 //---------------
 
 
 const Navbar = () => {
+  const overlayActive = useSelector((state)=>state.overlay.active)
   const { state, dispatch } = useContext(Context);
-
-  window.addEventListener("scroll", () => {dispatch({ type: "closeMenu" })});
+  const dispatchRedux = useDispatch();
+  
+  window.addEventListener("scroll", () => {
+    dispatch({ type: "closeMenu" });
+    dispatchRedux(closeCart());
+    dispatchRedux(closeOverlay())
+  });
   //window.addEventListener("resize", () => {dispatch({ type: "closeMenu" })});
 
   return (
@@ -32,7 +42,10 @@ const Navbar = () => {
         <motion.div whileTap={{scale:0.95}}>
           <NavbarMenuBtnStyled
            onClick={ 
-            () => dispatch({ type: "toggleMenu" })
+            () => {
+              dispatch({ type: "toggleMenu" });
+              dispatchRedux(toggleOverlay()); 
+             }
            }
           >
             <GiHamburgerMenu/>
@@ -40,7 +53,14 @@ const Navbar = () => {
         </motion.div>
 
         <motion.div whileTap={{scale:0.95}}>
-          <NavbarCartBtnStyled>
+          <NavbarCartBtnStyled
+          onClick={ 
+            () => {
+              dispatchRedux(toggleCart());
+              dispatchRedux(toggleOverlay())
+             }
+           }
+          >
             <FaShoppingCart/>
           </NavbarCartBtnStyled>
         </motion.div>   
@@ -49,11 +69,13 @@ const Navbar = () => {
       <Cart/>
 
       <Overlay
-       className={
-        state.isActive ? "active" : ""
-       }
+       className={overlayActive ? "active" : ""}
        onClick={
-        () => dispatch({ type: "toggleMenu" })
+        () => {
+          dispatch({ type: "closeMenu" });
+          dispatchRedux(closeCart());
+          dispatchRedux(toggleOverlay())
+         }
        }
       />         
     </NavbarContainerStyled>

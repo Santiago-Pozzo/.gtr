@@ -1,31 +1,46 @@
 import React from 'react'
 import { CartControlsStyled, CartProductDescriptionStyled, CartProductImgStyled, CartProductPriceStyled, CartProductStyled, CartQuantityHandlerStyled, ProductInfoStyled } from './CartStyles'
 import Button from "../Button/Button"
-const CartProduct = () => {
+import { useDispatch } from 'react-redux'
+import { addToCart, removeFromCart, removeItemUnit } from '../../Redux/Cart/CartSlice'
+
+
+const CartProduct = ({id, brand, model, img, price, quantity }) => {
+  const dispatch = useDispatch();
+
   return (
     <CartProductStyled>
       <ProductInfoStyled>
         <CartProductImgStyled>
-            
+            <img src={img} alt={brand+" "+model} />
         </CartProductImgStyled>
 
         <CartProductDescriptionStyled>
-            <h2>Marca</h2>
-            <h3>Modelo daskjadskjdsajads</h3>
-            <p>$60000</p>
+            <h2>{brand}</h2>
+            <h3>{model}</h3>
+            <p>${price}</p>
         </CartProductDescriptionStyled> 
       </ProductInfoStyled>
 
       <CartControlsStyled>
             <CartQuantityHandlerStyled>
-                <Button> - </Button>
-                <p> 2 </p>
-                <Button> + </Button>
+                <Button
+                 disabled = { quantity===1 }
+                 onClick = {()=>{dispatch(removeItemUnit(id))}}                 
+                > - </Button>
+
+                <p> {quantity} </p>
+
+                <Button
+                 onClick = {()=>{dispatch(addToCart({id, brand, model, img, price, quantity}))}} 
+                > + </Button>
             </CartQuantityHandlerStyled>
 
-            <CartProductPriceStyled> $120000 </CartProductPriceStyled>
+            <CartProductPriceStyled> ${price*quantity} </CartProductPriceStyled>
 
-            <Button>Quitar</Button>
+            <Button
+             onClick={()=>{dispatch(removeFromCart(id))}}
+            >Quitar</Button>
         </CartControlsStyled>
     </CartProductStyled>
   )

@@ -3,11 +3,12 @@ import { ModalStylded } from './ModalStyles'
 import Button from '../Button/Button'
 import { Overlay } from '../Navbar/NavbarStyles'
 
-const Modal = () => {
+const Modal = ({className}) => {
+  console.log(className);
   return (
     <>
       <ModalStylded
-       // className='active'
+       className={className}
       >
         <h2>Titulo de la alerta</h2>
         <p>Pregunta si estás seguro</p>
@@ -19,7 +20,7 @@ const Modal = () => {
       </ModalStylded>
 
       <Overlay
-        //className='active'
+        className={className}
       />
     </>
   )

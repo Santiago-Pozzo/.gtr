@@ -1,31 +1,52 @@
-import React from 'react'
+import React, { useReducer } from 'react'
+import { useDispatch, useSelector} from "react-redux"
+
 import { CartBtnBoxStyled, CartWrapperStyled, ProductBoxStyled, TotalBoxStyled } from './CartStyles'
 import CartProduct from './CartProduct'
 import Button from '../Button/Button'
-import Modal from '../Modal/Modal'
+import { clearCart, closeCart } from "../../Redux/Cart/CartSlice"
+
 
 const Cart = () => {
+  const cartItems = useSelector ((state)=>state.cart.cartItems)
+  const activeCart = useSelector((state)=>state.cart.active);
+  const dispatch = useDispatch();
+  const total = cartItems.reduce((acc, item)=>{
+    return (acc += item.price * item.quantity)
+  }, 0)
+
   return (
     <CartWrapperStyled
-     //className='active'
+     className={activeCart? "active" : ""}
     >
       <ProductBoxStyled>
-        <CartProduct/>
-        <CartProduct/>
-        <CartProduct/>
-        <CartProduct/>
-        <CartProduct/>
-        <CartProduct/>
+        {
+          cartItems.length? (
+            cartItems.map((item)=>{
+               return <CartProduct key={item.id} {...item}/>
+              })   
+          ) : (
+             <p>No hay productos en el carrito</p>
+          )
+        }
       </ProductBoxStyled>
 
-      <TotalBoxStyled>
+      <TotalBoxStyled
+       className={cartItems.length? "active" : " "}
+      >
         <h2>Total:</h2>
-        <h3>$15035431</h3>
+        <h3>${total}</h3>
       </TotalBoxStyled>
 
       <CartBtnBoxStyled>
-        <Button> Comprar </Button>
-        <Button> Vaciar </Button>
+        <Button
+         disabled = {!cartItems.length}
+        > Comprar </Button>
+
+        <Button
+         disabled = {!cartItems.length}
+         onClick={()=>dispatch(clearCart())}
+        > Vaciar </Button>
       </CartBtnBoxStyled>
     </CartWrapperStyled>
   )
