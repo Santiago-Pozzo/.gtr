@@ -1,5 +1,6 @@
 import React from 'react'
 import { useContext } from 'react'
+import { useDispatch } from 'react-redux'
 import { Context } from '../../Contexts/HeaderContext'
 import { NavbarLinksContainerStyled, NavbarLinkStyled,  NavbarLinkIconStyled} from './NavbarStyles'
 import {motion} from "framer-motion"
@@ -10,10 +11,12 @@ import {BiSolidHome} from "react-icons/bi"
 import {FaUserPlus} from "react-icons/fa"
 import {IoMdContacts} from "react-icons/io"
 import {TbHandRock} from "react-icons/tb"
+import { closeOverlay } from '../../Redux/Overlay/OverlaySlice'
 //---------------
 
 const NavbarLinksContainer = () => {
     const { state, dispatch } = useContext(Context);
+    const dispatchRedux = useDispatch();
   
     return (
     <NavbarLinksContainerStyled
@@ -22,7 +25,10 @@ const NavbarLinksContainer = () => {
      <NavbarLinkStyled 
        to="/"
        onClick={
-         () => {dispatch({ type: "closeMenu" })}
+         () => {
+          dispatch({ type: "closeMenu" });
+          dispatchRedux(closeOverlay());
+        }
        }
      >
       <motion.div whileTap={{scale:0.95}}>
@@ -37,7 +43,10 @@ const NavbarLinksContainer = () => {
      <NavbarLinkStyled 
        to="/products"
        onClick={
-         () => {dispatch({ type: "closeMenu" })}
+         () => {
+          dispatch({ type: "closeMenu" });
+          dispatchRedux(closeOverlay());
+        }
        }
      >
        <motion.div whileTap={{scale:0.95}}>
@@ -52,8 +61,11 @@ const NavbarLinksContainer = () => {
      <NavbarLinkStyled 
        to="/about"
        onClick={
-         () => {dispatch({ type: "closeMenu" })}
-       }
+        () => {
+         dispatch({ type: "closeMenu" });
+         dispatchRedux(closeOverlay());
+         }
+        }
      >
        <motion.div whileTap={{scale:0.95}}>
          <NavbarLinkIconStyled>
@@ -68,8 +80,11 @@ const NavbarLinksContainer = () => {
      <NavbarLinkStyled 
        to="/contact"
        onClick={
-         () => {dispatch({ type: "closeMenu" })}
-       }
+        () => {
+         dispatch({ type: "closeMenu" });
+         dispatchRedux(closeOverlay());
+         }
+        }
      >
        <motion.div whileTap={{scale:0.95}}>
          <NavbarLinkIconStyled>
@@ -82,8 +97,11 @@ const NavbarLinksContainer = () => {
      <NavbarLinkStyled 
        to="/login"
        onClick={
-         () => {dispatch({ type: "closeMenu" })}
-       } 
+        () => {
+         dispatch({ type: "closeMenu" });
+         dispatchRedux(closeOverlay());
+         }
+        }
      >
        <motion.div whileTap={{scale:0.95}}>
          <NavbarLinkIconStyled> 
