@@ -16,7 +16,7 @@ export const ImputWrapperStyled = styled.div`
         font-weight: 400;
         letter-spacing: 2px;
 
-        @media (min-width: 1040px) {
+        @media (min-width: 760px) {
             font-size: 17px;
         }
     }
@@ -26,7 +26,7 @@ export const ImputWrapperStyled = styled.div`
         font-family: 'Yanone Kaffeesatz', sans-serif;
         font-size: 18px;
 
-        @media (min-width: 1040px) {
+        @media (min-width: 760px) {
             font-size: 22px;
         }
         
@@ -43,7 +43,7 @@ export const ImputWrapperStyled = styled.div`
         font-size: 15px;
         color: var(--Snow);
 
-        @media (min-width: 1040px) {
+        @media (min-width: 760px) {
             font-size: 18px;
         }
 
@@ -65,7 +65,7 @@ export const ImputWrapperStyled = styled.div`
             align-items: flex-start;
             padding: 0;
 
-            @media (min-width: 1040px) {
+            @media (min-width: 760px) {
                 height: 120px;
             }
         }

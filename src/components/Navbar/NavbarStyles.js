@@ -121,8 +121,7 @@ export const NavbarContainerStyled = styled.header`
 
         export const NavbarLinkStyled = styled(NavLink)`
             cursor: pointer;
-            font-family: 'Libre Franklin', 
-            sans-serif;
+            font-family: 'Libre Franklin', sans-serif;
             font-size: 12px; 
             padding: 5px 15px;
             border-radius: 1rem;

@@ -2,13 +2,14 @@ import React from 'react'
 import { FormStyled } from './FormStyled'
 import {ButtonStyled} from "../Button/ButtonStyles"
 
-const Form = ({children}) => {
+const Form = ({children, btnText}) => {
   return (
     <FormStyled>
+      
       {children}
 
       <ButtonStyled>
-            Enviar
+            {btnText}
       </ButtonStyled>
     </FormStyled>
   )

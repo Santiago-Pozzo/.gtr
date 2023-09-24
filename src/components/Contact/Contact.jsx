@@ -13,19 +13,21 @@ const Contact = () => {
         <p>Para que podamos darte una atención personalizada dejanos tus datos así podremos comunicarnos con vos y responder la consulta que quieras hacernos.</p>
       </ContactTextBoxStyled>
 
-      <Form>
+      <Form
+       btnText= "Enviar"
+      >
         <TextInput>
-            Nombre:
+            Nombre
         </TextInput>
 
         <TextInput>
-            Apellido:
+            Apellido
         </TextInput>
 
         <MailInput/>
 
         <MessageInput>
-            Mensaje:
+            Mensaje
         </MessageInput>
 
        </Form>  

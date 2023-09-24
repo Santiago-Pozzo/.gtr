@@ -5,7 +5,7 @@ const MailInput = () => {
   return (
     <ImputWrapperStyled>
       <ImputLabelStyled htmlFor="Email">
-       Email:
+       Email :
       </ImputLabelStyled>  
 
       <ImputBoxStyled type="email" name="Email" id="Email" className='error'/>
