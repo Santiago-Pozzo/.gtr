@@ -1,25 +1,54 @@
 import React from 'react'
 import { LinkStyled, LoginWrapperStyled } from './loginStyles'
-import MailInput from "../TextInputs/MailInput"
 import Form from "../Forms/Form"
-import PassInpunt from '../TextInputs/PassInput'
+import TextInput from '../TextInputs/TextInputs'
+import { Formik } from 'formik'
+import { registerValidationEsch } from '../../Formik/FormValidations'
+
 
 const Login = () => {
   return (
     <LoginWrapperStyled>
       <h2>Iniciá sesión</h2>
 
-      <Form
-       btnText= "Ingresar"
-      >
-        <MailInput>
-            Email
-        </MailInput>
+      <Formik
+        initialValues={{
+          email: "",
+          password: "",
+        }}
 
-        <PassInpunt>
-            Contraseña
-        </PassInpunt>
-      </Form>
+        validationSchema={registerValidationEsch}
+
+        onSubmit= {(values, {resetForm}) => {
+          console.log(values);
+          resetForm();
+        }}
+      >
+
+        {
+          ({touched, errors}) => (
+            <Form
+              btnText= "Ingresar"
+            >
+              <TextInput 
+                type="email"
+                name="email"
+                error= {errors.email && touched.email}
+              >
+                  Email
+              </TextInput>
+
+              <TextInput
+                type="password"
+                name="password"
+                error= {errors.password && touched.password}
+              >
+                  Contraseña
+              </TextInput>
+            </Form>
+          )
+        }
+      </Formik>
 
       <p>
         ¿No tenés usuario? 

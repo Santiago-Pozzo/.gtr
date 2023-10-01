@@ -1,7 +1,6 @@
 import React from 'react'
 import { ContactTextBoxStyled, ContactWrapperStyled } from './ContacStyles'
 import TextInput from '../TextInputs/TextInputs'
-import MailInput from '../TextInputs/MailInput'
 import Form from '../Forms/Form'
 import MessageInput from '../TextInputs/MessageInput'
 
@@ -16,15 +15,26 @@ const Contact = () => {
       <Form
        btnText= "Enviar"
       >
-        <TextInput>
-            Nombre
-        </TextInput>
+            <TextInput 
+              type="text"
+              name="name"
+            >
+                Nombre
+            </TextInput>
 
-        <TextInput>
-            Apellido
-        </TextInput>
+            <TextInput 
+              type="text"
+              name="lastname"
+            >
+                Apellido
+            </TextInput>
 
-        <MailInput/>
+        <TextInput 
+          type="email"
+          name="email"
+        >
+          Email
+        </TextInput>
 
         <MessageInput>
             Mensaje

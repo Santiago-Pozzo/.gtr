@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit"
+import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit"
 import {persistReducer} from  "redux-persist"
 import storage from "redux-persist/lib/storage"
 import persistStore from "redux-persist/es/persistStore"
@@ -10,6 +10,7 @@ import productsReducer from "./Products/ProductsSlice"
 import cartReducer from "./Cart/CartSlice"
 import overlayReducer from "./Overlay/OverlaySlice"
 import modalReducer from "./AlertModal/ModalSlice"
+import  useReducer  from "./User/UserSlice"
 
 
 const reducers = combineReducers({
@@ -18,19 +19,25 @@ const reducers = combineReducers({
      products: productsReducer,
      cart: cartReducer,
      overlay: overlayReducer,
-     modal: modalReducer
- });
+     modal: modalReducer,
+     user: useReducer
+ }); 
 
 const persistConfig = {
     key: "root",
     storage,
-    whitelist: ["cart"]
+    whitelist: ["cart", "user"]
  }
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
 export const store = configureStore({
-    reducer: persistedReducer
+    reducer: persistedReducer,
+
+    //Para que no me tire el error en consola de que el estado no es serializable
+     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+         serializableCheck: false
+     })
 });
 
 export const persistor = persistStore(store);

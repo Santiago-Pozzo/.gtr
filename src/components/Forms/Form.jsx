@@ -8,8 +8,10 @@ const Form = ({children, btnText}) => {
       
       {children}
 
-      <ButtonStyled>
-            {btnText}
+      <ButtonStyled
+        type='submit'
+      >
+        {btnText}
       </ButtonStyled>
     </FormStyled>
   )

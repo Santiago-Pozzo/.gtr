@@ -1,6 +1,7 @@
+import { Form } from "formik";
 import styled from "styled-components"
 
-export const FormStyled = styled.form` 
+export const FormStyled = styled(Form)` 
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -21,6 +22,6 @@ export const FormStyled = styled.form`
     
     @media (min-width: 1040px) {
         gap: 18px;
-        padding
+        padding: 22px 15px;
     }
 `;
