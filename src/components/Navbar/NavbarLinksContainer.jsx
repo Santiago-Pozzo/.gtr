@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Context } from '../../Contexts/HeaderContext'
 import { NavbarLinksContainerStyled, NavbarLinkStyled,  NavbarLinkIconStyled} from './NavbarStyles'
 import {motion} from "framer-motion"
@@ -17,6 +17,7 @@ import { closeOverlay } from '../../Redux/Overlay/OverlaySlice'
 const NavbarLinksContainer = () => {
     const { state, dispatch } = useContext(Context);
     const dispatchRedux = useDispatch();
+    const { activeSticky } = useSelector((state) => state.user)
   
     return (
     <NavbarLinksContainerStyled
@@ -95,6 +96,7 @@ const NavbarLinksContainer = () => {
      </NavbarLinkStyled>
 
      <NavbarLinkStyled 
+       className={activeSticky? "hidden" : ""} 
        to="/login"
        onClick={
         () => {

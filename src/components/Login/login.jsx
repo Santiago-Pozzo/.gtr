@@ -3,25 +3,38 @@ import { LinkStyled, LoginWrapperStyled } from './loginStyles'
 import Form from "../Forms/Form"
 import TextInput from '../TextInputs/TextInputs'
 import { Formik } from 'formik'
-import { registerValidationEsch } from '../../Formik/FormValidations'
+import { loginValidationEsch } from '../../Formik/FormValidations'
+import { loginInitialValues } from '../../Formik/InitialValues'
+import { loginUser } from '../../axios/axiosUser'
+import { useDispatch } from 'react-redux'
+import { setCurrentUser, toggleSticky } from '../../Redux/User/UserSlice'
+import useRedirect from '../../Hooks/useRerdirect'
 
 
 const Login = () => {
+  const dispatch = useDispatch();
+  useRedirect("/");
+
   return (
     <LoginWrapperStyled>
       <h2>Iniciá sesión</h2>
 
       <Formik
-        initialValues={{
-          email: "",
-          password: "",
-        }}
+        initialValues={loginInitialValues}
 
-        validationSchema={registerValidationEsch}
+        validationSchema={loginValidationEsch}
 
-        onSubmit= {(values, {resetForm}) => {
-          console.log(values);
-          resetForm();
+        onSubmit= {async (values) => {
+          const user = await loginUser(values.email, values.password);
+          
+          if (user) {
+            dispatch(setCurrentUser({
+              ...user.usuario,
+              token: user.token
+            }));
+
+            dispatch(toggleSticky());
+          }
         }}
       >
 

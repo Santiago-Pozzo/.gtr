@@ -4,27 +4,40 @@ import { registerValidationEsch } from "../../Formik/FormValidations"
 import TextInput from "../TextInputs/TextInputs"
 import Form from "../Forms/Form"
 import { RegisterWrapperStyled } from './RegisterStyles'
+import { registerInitialValues } from '../../Formik/InitialValues'
+import { createUsr } from '../../axios/axiosUser'
+import { useDispatch } from "react-redux"
+import { setCurrentUser, toggleSticky } from '../../Redux/User/UserSlice'
+import useRedirect from '../../Hooks/useRerdirect'
 
 const Register = () => {
-
+  const dispatch = useDispatch();
+  useRedirect("/");
 
   return (
     <RegisterWrapperStyled>
       <h2>Creá tu usuario</h2>
 
       <Formik
-        initialValues={{
-          name: "",
-          lastname: "",
-          email: "",
-          password: "",
-        }}
+        initialValues={registerInitialValues}
 
         validationSchema={registerValidationEsch}
 
-        onSubmit= {(values, {resetForm}) => {
-          console.log(values);
-          resetForm();
+        onSubmit= { async (values, actions) => {
+          
+          const user = await createUsr (
+            values.name+values.lastname,
+            values.email,
+            values.password
+          );
+
+          actions.resetForm();
+
+          if (user) {
+            dispatch((setCurrentUser({...user.usuario})));
+            dispatch(toggleSticky());
+          }
+
         }}
       >
 

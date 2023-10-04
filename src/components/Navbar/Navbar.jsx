@@ -15,6 +15,7 @@ import {FaShoppingCart} from "react-icons/fa"
 import  Logo  from '../../assets/images/logogtr.png'
 import Cart from '../Cart/Cart'
 import { closeCart, toggleCart } from '../../Redux/Cart/CartSlice'
+import UserSticky from '../UserSticky/UserSticky'
 //---------------
 
 
@@ -86,7 +87,10 @@ const Navbar = () => {
           dispatchRedux(toggleOverlay())
          }
        }
-      />         
+      />
+
+      <UserSticky/>  
+  
     </NavbarContainerStyled>
   )
 }

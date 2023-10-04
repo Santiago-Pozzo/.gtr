@@ -1,8 +1,9 @@
 import React from 'react'
 import { ImputBoxStyled, ImputLabelStyled, ImputWrapperStyled } from './InputsStyles'
+import { ErrorMessage, Field } from 'formik'
 
 
-const MessageInput = ({children}, ...rest) => {
+const MessageInput = ({children, name, error, type}) => {
     return (
         <ImputWrapperStyled>
           <ImputLabelStyled htmlFor={children}>
@@ -12,15 +13,15 @@ const MessageInput = ({children}, ...rest) => {
           {/* usar elemento TextArea (en ves de type=text), repasar clase de formik 3.15, min23:50 
               pasar name por props
           */}
-          <ImputBoxStyled 
-            type="text" 
-            name={children} 
+          <Field 
+            type={type} 
+            name={name} 
             id={children} 
-            className='message'
-            {...rest}/
-          >
+            className={error? "message error" :"message"}
+            as={ImputBoxStyled}
+          />
     
-          <span className='hidden'>Mensaje de error</span>
+          <span><ErrorMessage name={name}/></span>
         </ImputWrapperStyled>
     ) 
 }

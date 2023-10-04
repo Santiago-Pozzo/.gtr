@@ -3,6 +3,8 @@ import { ContactTextBoxStyled, ContactWrapperStyled } from './ContacStyles'
 import TextInput from '../TextInputs/TextInputs'
 import Form from '../Forms/Form'
 import MessageInput from '../TextInputs/MessageInput'
+import { Formik } from 'formik'
+import { contactValidationEsch } from '../../Formik/FormValidations'
 
 const Contact = () => {
   return (
@@ -12,35 +14,65 @@ const Contact = () => {
         <p>Para que podamos darte una atención personalizada dejanos tus datos así podremos comunicarnos con vos y responder la consulta que quieras hacernos.</p>
       </ContactTextBoxStyled>
 
-      <Form
-       btnText= "Enviar"
+      <Formik
+        initialValues={{
+          name: "",
+          lastname: "",
+          email: "",
+          msg: "",
+        }}
+
+        validationSchema={contactValidationEsch}
+
+        onSubmit= {(values, {resetForm}) => {
+          console.log(values);
+          resetForm();
+        }}
       >
-            <TextInput 
-              type="text"
-              name="name"
+
+        {
+          ({touched, errors}) => (
+            <Form
+            btnText= "Enviar"
             >
+              <TextInput 
+                type="text"
+                name="name"
+                error= {errors.name && touched.name}
+              >
                 Nombre
-            </TextInput>
+              </TextInput>
 
-            <TextInput 
-              type="text"
-              name="lastname"
-            >
+              <TextInput 
+                type="text"
+                name="lastname"
+                error= {errors.lastname && touched.lastname}
+              >
                 Apellido
-            </TextInput>
+              </TextInput>
 
-        <TextInput 
-          type="email"
-          name="email"
-        >
-          Email
-        </TextInput>
+              <TextInput 
+                type="email"
+                name="email"
+                error= {errors.email && touched.email}
+              >
+                Email
+              </TextInput>
 
-        <MessageInput>
-            Mensaje
-        </MessageInput>
+              <MessageInput
+                type="text"
+                name="msg"
+                error= {errors.msg && touched.msg}
+              >
+                Mensaje
+              </MessageInput>
+          </Form>  
+          )
+        }
+        
+      </Formik>
 
-       </Form>  
+
 
     </ContactWrapperStyled>
   )

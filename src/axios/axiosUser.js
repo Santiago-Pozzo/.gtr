@@ -13,7 +13,25 @@ export const createUsr = async (nombre, email, password) => {
             );
 
             return response.data;
+            
     } catch (error) {
         return alert (error.response.data.errors[0].msg) //esto viene dado en la forma en que la API devuelve los errores
     }
 }
+
+export const loginUser = async (email, password) => {
+    try {
+        const response = await axios.post( 
+            `${BASE_URL}auth/login`,
+            {
+                email,
+                password
+            }
+        );
+
+        return response.data;
+
+    } catch (error) {
+        return alert (error.response.data.msg)
+    }
+};
