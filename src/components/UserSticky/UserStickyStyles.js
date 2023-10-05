@@ -1,8 +1,9 @@
 import styled from "styled-components"
 
-export const StickyStyled = styled.div`
-    position: absolute;
-    top: 100px;
+export const StickyStyled = styled.div`    
+    z-index:2;
+    position: fixed;
+    top: 82px;
     right: 0;
 
     display: flex;
@@ -13,22 +14,63 @@ export const StickyStyled = styled.div`
 
     min-width: 150px;
     max-width: 90%;
-    height: 32px;
-    border-radius: 1rem 0 0 1rem;
+    height: 25px;
 
-    padding: 8px 0 8px 8px;
+    border-radius: 1rem 0 0 1rem;
+    border: solid 1px;
+    border-color: var(--Snow);
+    border-right: none;
+
+    padding: 8px 0;
+
+    &.closed {
+        min-width: 10px;
+    }
+
+    :first-child {
+        height: 17px;
+        width: 17px;
+
+        margin-left: 1px;
+
+        border-radius: 50%;
+        padding: 2px;
+
+        cursor: pointer;
+
+        &:hover {
+          background: var(--Black) 
+        }
+
+        @media (min-width: 760px) {
+           height: 25px;
+           width: 25px;
+        }
+    }
+
+    :nth-child(2) {
+        height: 18px;
+        width: 18px;
+        margin-right: 4px;
+
+        @media (min-width: 760px) {
+           height: 25px;
+           width: 25px;
+        }
+    }
 
     @media (min-width: 760px) {
-        top: 140px;
+        top: 115px;
         min-width: 220px;
         max-width: 50%;
-        height: 50px;
-        padding: 15px 0 12px 15px;
+        height: 32px;
+        padding: 15px 0;
     }
 
     h3 {
         padding: 0;
         margin: 0;
+        margin-right: 5px;
         font-size: 15px;
 
         @media (min-width: 760px) {

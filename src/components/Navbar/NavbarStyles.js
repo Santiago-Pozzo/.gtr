@@ -123,7 +123,7 @@ export const NavbarContainerStyled = styled.header`
             cursor: pointer;
             font-family: 'Libre Franklin', sans-serif;
             font-size: 12px; 
-            padding: 5px 15px;
+            padding: 5px 12px;
             border-radius: 1rem;
 
             &.active {

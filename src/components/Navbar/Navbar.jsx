@@ -21,6 +21,7 @@ import UserSticky from '../UserSticky/UserSticky'
 
 const Navbar = () => {
   const overlayActive = useSelector((state)=>state.overlay.active)
+  const activeSticky = useSelector((state)=>state.user.activeSticky)
   const { state, dispatch } = useContext(Context);
   const dispatchRedux = useDispatch();
   
@@ -89,8 +90,6 @@ const Navbar = () => {
        }
       />
 
-      <UserSticky/>  
-  
     </NavbarContainerStyled>
   )
 }

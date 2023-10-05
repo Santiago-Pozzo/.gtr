@@ -25,6 +25,15 @@ export const CartWrapperStyled = styled.div`
 
 export const EmptyCartMsg = styled.div`
     font-size: 15px;
+    text-align: center;
+    padding: 8px;
+
+    span {
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-right: 2px;
+    }
+
     @media (min-width: 760px){
         font-size: 20px;
     }

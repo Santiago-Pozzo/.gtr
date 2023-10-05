@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const ProducsWraperStyled = styled.section`
     display: flex;
     flex-direction: column;
-    margin: 35px 10px;
+    margin: 50px 10px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -186,6 +186,43 @@ export const ProducsWraperStyled = styled.section`
 
                     }
                 `;
+
+                export const BottonMsgStyled = styled.div`
+                    display: none;
+
+                   &.active {
+                    display: flex;
+                    flex-direction: row;
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+
+                    padding: 5px 1px;
+                    gap: 1px;
+                   }
+                `;
+
+                    export const BottomSpanStyled = styled.span`
+                       margin: 0;
+                       padding: 0;
+                       font-size: 12px;
+                       letter-spacing: 1px;
+                       
+                       @media (min-width: 760px) {
+                            font-size: 14px;
+                       }
+                    `;
+
+                    export const BottomPStyled = styled.p`
+                       margin: 0;
+                       padding: 0;                    
+                       font-size: 11px;
+
+                       @media (min-width: 760px) {
+                            font-size: 13px;
+                       }
+                    `;
+
 
     export const ButtonBoxStyled = styled.div`
         width: 50%;

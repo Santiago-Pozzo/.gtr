@@ -8,6 +8,7 @@ export const ContactWrapperStyled = styled.section`
     width: 100%;
     padding: 20px;
     gap: 25px;
+    margin-top: 15px;
 
     @media (min-width: 1040px) {
         padding: 40px;
@@ -42,7 +43,7 @@ export const ContactWrapperStyled = styled.section`
             max-width: 550px;
             
             @media (min-width: 1040px) {
-                font-size: 21px;
+                font-size: 25px;
             }
         }
     `;

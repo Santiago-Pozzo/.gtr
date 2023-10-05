@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
         --Hollywood-cerise: #ec058e;
         --btn-gradient: linear-gradient(83deg, #ffa100, #fb103d);
         --btn-gradient-secondary: linear-gradient(140deg, #3B3022, #3B2329);
+        --sticky-transform: translateX(0);
     }
 
     html {

@@ -8,6 +8,7 @@ export const AboutWrapperStyled = styled.section`
     width: 100%;
     padding: 20px;
     gap: 50px;
+    margin-top: 20px;
 
     @media (min-width: 760px) {
         padding: 40px;

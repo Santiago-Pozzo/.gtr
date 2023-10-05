@@ -2,7 +2,8 @@ import {createSlice} from "@reduxjs/toolkit"
 
 const INITIAL_STATE = {
     currentUser: null,
-    activeSticky: false
+    activeSticky: false,
+    stickyOpen: false,
 }
 
 const userSlice = createSlice({
@@ -12,7 +13,7 @@ const userSlice = createSlice({
         setCurrentUser: (state, action) => {
             return {
                 ...state,
-                currentUser: action.payload,
+                currentUser: action.payload,                
             };
         },
 
@@ -20,14 +21,25 @@ const userSlice = createSlice({
             return {
                 ...state,
                 activeSticky: !state.activeSticky,
+                stickyOpen: false
             };
         },
+
+        toggleOpenSticky: (state) => {
+            return {
+                ...state,
+                stickyOpen: !state.stickyOpen
+            };
+        },
+
+
     }    
 });
 
 export const {
     setCurrentUser,
-    toggleSticky
+    toggleSticky, 
+    toggleOpenSticky,
 } = userSlice.actions;
 
 export default userSlice.reducer

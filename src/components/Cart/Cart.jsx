@@ -5,11 +5,16 @@ import { CartBtnBoxStyled, CartWrapperStyled, EmptyCartMsg, ProductBoxStyled, To
 import CartProduct from './CartProduct'
 import Button from '../Button/Button'
 import { setModalAction, setModalMsg, setModalTitle, toggleModal } from '../../Redux/AlertModal/ModalSlice'
+import { LinkStyled } from '../Login/loginStyles'
+import { toggleCart } from '../../Redux/Cart/CartSlice'
+import { closeOverlay } from '../../Redux/Overlay/OverlaySlice'
 
 
 const Cart = () => {
   const cartItems = useSelector ((state)=>state.cart.cartItems)
   const activeCart = useSelector((state)=>state.cart.active);
+  const currentUser = useSelector((state)=>state.user.currentUser)
+  
   const dispatch = useDispatch();
   const total = cartItems.reduce((acc, item)=>{
     return (acc += item.price * item.quantity)
@@ -20,13 +25,35 @@ const Cart = () => {
      className={activeCart? "active" : ""}
     >
       <ProductBoxStyled>
-        {
-          cartItems.length? (
-            cartItems.map((item)=>{
-               return <CartProduct key={item.id} {...item}/>
-              })   
+        { 
+          currentUser? (
+
+              cartItems.length? (
+
+                cartItems.map((item)=>{
+                return <CartProduct key={item.id} {...item}/>
+                })
+                
+              ) : (
+
+                <EmptyCartMsg>No hay productos en el carrito</EmptyCartMsg>
+              
+              )
+
           ) : (
-             <EmptyCartMsg>No hay productos en el carrito</EmptyCartMsg>
+
+            <EmptyCartMsg>
+            <span><LinkStyled 
+                  to="/login"
+                  onClick={()=>{
+                    dispatch(toggleCart());
+                    dispatch(closeOverlay())
+                   }
+                  }
+                  >Inicía sesión</LinkStyled></span>
+             para poder agregar productos al carrito
+            </EmptyCartMsg>
+
           )
         }
       </ProductBoxStyled>

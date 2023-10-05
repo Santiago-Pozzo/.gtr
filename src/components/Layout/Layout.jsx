@@ -6,9 +6,12 @@ import { useContext } from 'react'
 import {  Context } from '../../Contexts/HeaderContext'
 import { useLocation } from 'react-router-dom'
 import Modal from '../Modal/Modal'
+import UserSticky from '../UserSticky/UserSticky'
+import { useSelector } from 'react-redux'
 
 const Layout = ({children}) => {
   const {state, dispatch} = useContext(Context);
+  const activeSticky = useSelector((state)=>state.user.activeSticky)
   
   const { pathname } = useLocation();
 
@@ -19,6 +22,11 @@ const Layout = ({children}) => {
   return (
     <LayoutWrapper>        
       <NavBar/>
+      {
+        activeSticky && (
+         <UserSticky/>
+        ) 
+      }
       <Modal
        //className="active"
       />    
