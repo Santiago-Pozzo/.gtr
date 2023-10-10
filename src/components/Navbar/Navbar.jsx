@@ -16,6 +16,7 @@ import {GiHamburgerMenu} from "react-icons/gi"
 import {FaShoppingCart} from "react-icons/fa"
 import  Logo  from '../../assets/images/logogtr.png'
 import Cart from '../Cart/Cart'
+import { closeModal } from '../../Redux/AlertModal/ModalSlice'
 //---------------
 
 
@@ -53,7 +54,8 @@ const Navbar = () => {
               dispatch({ type: "toggleMenu" });
               dispatchRedux(openOverlay());
               dispatchRedux(closeCart()); 
-              dispatchRedux(closeFootModal())
+              dispatchRedux(closeFootModal());
+              dispatchRedux(closeModal());
              }
            }
           >
@@ -67,7 +69,8 @@ const Navbar = () => {
             () => {
               dispatchRedux(toggleCart());
               dispatchRedux(toggleOverlay());
-              dispatchRedux(closeFootModal())
+              dispatchRedux(closeFootModal());
+              dispatchRedux(closeModal());
              }
            }
           >
