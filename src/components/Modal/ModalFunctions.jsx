@@ -1,4 +1,4 @@
-import React from "react";
+
 import { clearCart } from "../../Redux/Cart/CartSlice";
 import { logout } from "../../Redux/User/UserSlice";
 

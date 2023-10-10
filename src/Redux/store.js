@@ -12,6 +12,7 @@ import overlayReducer from "./Overlay/OverlaySlice"
 import modalReducer from "./AlertModal/ModalSlice"
 import  userReducer  from "./User/UserSlice"
 import featuredReducer from "./FeaturedProducts/FeaturedSlice"
+import footModalReducer from "./FootModal/FootModalSlice"
 
 const reducers = combineReducers({
      categories: categoriesReducer,
@@ -21,7 +22,8 @@ const reducers = combineReducers({
      overlay: overlayReducer,
      modal: modalReducer,
      user: userReducer,
-     featured: featuredReducer
+     featured: featuredReducer,
+     footModal: footModalReducer
  }); 
 
 const persistConfig = {

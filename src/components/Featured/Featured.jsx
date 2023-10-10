@@ -6,7 +6,7 @@ import  Logo2  from '../../assets/images/logogtr2.png'
 
 const Featured = () => {
 const { featured } = useSelector((state)=>state.featured)
-console.log(featured);
+
   return (
     <FeaturedWrapperStyled>
         <FeaturedHeadStyled> 

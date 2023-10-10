@@ -1,11 +1,11 @@
 import React from 'react'
 import {useDispatch, useSelector} from "react-redux"
 
-import { CardProductStyled, ProducsWraperStyled, ProductsBoxStyled, CardImg, CardBottomBox,CardCategory, CardBrand, CardModel, CardDescription, CardInfoBox, ButtonBoxStyled, BottonMsgStyled, BottomSpanStyled, BottomPStyled } from './ProductsStyles'
-import  { ButtonStyled }  from '../Button/ButtonStyles'
+import { CardProductStyled,  CardImg, CardBottomBox,CardCategory, CardBrand, CardModel, CardDescription, CardInfoBox,  BottonMsgStyled, BottomSpanStyled, BottomPStyled } from './ProductsStyles'
 import { addToCart } from '../../Redux/Cart/CartSlice'
 import { LinkStyled } from '../Login/loginStyles'
 import Button from '../Button/Button'
+import { openFootModal, setSelectedProduct } from '../../Redux/FootModal/FootModalSlice'
 
 
 const ProductCard = ({ id, cat, brand, model, description, img, price }) => {
@@ -31,7 +31,10 @@ const ProductCard = ({ id, cat, brand, model, description, img, price }) => {
           <Button
            disabled= {!currentUser}
            whileTap={{scale: 0.95}}
-           onClick={()=>dispatch(addToCart({ id, cat, brand, model, description, img, price }))}
+           onClick={()=>{
+            dispatch(setSelectedProduct({ id, cat, brand, model, description, img, price }))
+            dispatch(openFootModal())
+           }}
           >
               Agregar
           </Button>

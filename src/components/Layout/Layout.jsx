@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom'
 import Modal from '../Modal/Modal'
 import UserSticky from '../UserSticky/UserSticky'
 import { useSelector } from 'react-redux'
+import FootModal from '../FootModal/FootModal'
 
 const Layout = ({children}) => {
   const {state, dispatch} = useContext(Context);
@@ -22,18 +23,21 @@ const Layout = ({children}) => {
   return (
     <LayoutWrapper>        
       <NavBar/>
+
       {
         activeSticky && (
          <UserSticky/>
         ) 
       }
-      <Modal
-       //className="active"
-      />    
+
+      <Modal/>  
+
       <ContentContainerStyled>
         {children} 
       </ContentContainerStyled>
 
+      <FootModal/>
+      
       <Footer/>         
     </LayoutWrapper>
   )
