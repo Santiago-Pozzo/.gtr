@@ -5,6 +5,7 @@ import {TbLogout} from "react-icons/tb"
 import { setCurrentUser, toggleOpenSticky, toggleSticky } from '../../Redux/User/UserSlice';
 import { LuUser } from "react-icons/lu"
 import { MdOutlineArrowForwardIos, MdOutlineArrowBackIosNew} from "react-icons/md"
+import { setModalTitle, setModalMsg, setModalAction, toggleModal} from '../../Redux/AlertModal/ModalSlice';
 
 
 const UserSticky = () => {
@@ -40,7 +41,12 @@ const UserSticky = () => {
             <h3>{currentUser? currentUser.nombre :""}</h3>
             
             <button
-              onClick={()=>handleLogout()}      
+              onClick={()=>{
+                dispatch(setModalTitle("Cerrar sesión"));
+                dispatch(setModalMsg("¿Deseas cerrar tu usuario?"))
+                dispatch(setModalAction("logout"))  
+                dispatch(toggleModal())   
+              }}      
             >
               <TbLogout/>
             </button>

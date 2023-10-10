@@ -1,9 +1,12 @@
 import React from 'react'
+import {useSelector} from "react-redux"
 import { products } from '../../data/ProductsData'
 import { FeaturedWrapperStyled, FeaturedCardBoxStyled, LogoContainer, FeaturedCardStyled, FeaturedHeadStyled } from "./FeaturedStyles"
 import  Logo2  from '../../assets/images/logogtr2.png'
 
 const Featured = () => {
+const { featured } = useSelector((state)=>state.featured)
+console.log(featured);
   return (
     <FeaturedWrapperStyled>
         <FeaturedHeadStyled> 
@@ -13,7 +16,7 @@ const Featured = () => {
         
         <FeaturedCardBoxStyled>
             {
-            products.map((product)=>{
+            featured.map((product)=>{
                 return <FeaturedCardStyled key={product.id}>
                     <img src={product.img} alt={product.model} />
                     <div>

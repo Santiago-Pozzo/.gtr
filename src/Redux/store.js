@@ -10,8 +10,8 @@ import productsReducer from "./Products/ProductsSlice"
 import cartReducer from "./Cart/CartSlice"
 import overlayReducer from "./Overlay/OverlaySlice"
 import modalReducer from "./AlertModal/ModalSlice"
-import  useReducer  from "./User/UserSlice"
-
+import  userReducer  from "./User/UserSlice"
+import featuredReducer from "./FeaturedProducts/FeaturedSlice"
 
 const reducers = combineReducers({
      categories: categoriesReducer,
@@ -20,7 +20,8 @@ const reducers = combineReducers({
      cart: cartReducer,
      overlay: overlayReducer,
      modal: modalReducer,
-     user: useReducer
+     user: userReducer,
+     featured: featuredReducer
  }); 
 
 const persistConfig = {

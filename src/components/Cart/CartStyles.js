@@ -12,7 +12,7 @@ export const CartWrapperStyled = styled.div`
         position: fixed;
         top: 80px;    
         right: 0;
-        z-index: 2;
+        z-index: 3;
         background: var(--Black);
         flex-direction: column;
         align-items: center;

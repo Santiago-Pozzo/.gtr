@@ -37,6 +37,7 @@ export const ImputWrapperStyled = styled.div`
         border: none;
         border-radius: 6px;
         width: 100%;
+        padding: 1px 5px;
         text-align: left;
         vertical-align: top;
 
@@ -45,6 +46,7 @@ export const ImputWrapperStyled = styled.div`
 
         @media (min-width: 760px) {
             font-size: 18px;
+            padding: 1px 8px;
         }
 
         &:focus {
@@ -57,16 +59,38 @@ export const ImputWrapperStyled = styled.div`
             border: solid 1px;
             border-color: var(--Hollywood-cerise);
         }
+    `;
 
-        &.message {
-            display: flex;
-            height: 80px;
-            text-align: left;
-            align-items: flex-start;
-            padding: 0;
+    export const MessageInputBoxStyled = styled.textarea`
+        background: var(--Black-olive);
+        border: none;
+        border-radius: 6px;
+        width: 100%;
+        height: 80px;
+        text-align: left;
+        vertical-align: top;
+        font-size: 15px;
+        color: var(--Snow);
 
-            @media (min-width: 760px) {
-                height: 120px;
-            }
-        }
+    @media (min-width: 760px) {
+        font-size: 18px;
+    }
+
+    &:focus {
+        border: solid 2px;
+        border-color: red;
+    }
+
+    &.error {
+        border: solid 1px;
+        border-color: var(--Hollywood-cerise);
+    }
+
+    align-items: flex-start;
+    padding: 5px;
+
+    @media (min-width: 760px) {
+        height: 120px;
+        padding: 8px;
+    }
     `;

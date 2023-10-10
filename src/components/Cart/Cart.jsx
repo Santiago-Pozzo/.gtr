@@ -72,9 +72,10 @@ const Cart = () => {
           ()=>{
             dispatch(setModalTitle("Finalizar compra"));
             dispatch(setModalMsg("Estás por comprar: "
-            + cartItems.map((item)=>{
-              return item.quantity + " " + item.brand + " " + item.model+ " "
-            }) + "por un total de $" + total + "¿Deseas continuar?"))
+                + cartItems.map((item)=>{
+                 return item.quantity + " " + item.brand + " " + item.model+ " "
+                }) 
+                + "por un total de $" + total + " ¿Deseas continuar?"))
             dispatch(setModalAction("clearCart"))  
             dispatch(toggleModal())          
           }
