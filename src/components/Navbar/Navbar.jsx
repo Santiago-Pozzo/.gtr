@@ -2,26 +2,25 @@ import React, { useEffect } from 'react'
 import { useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { closeOverlay, toggleOverlay } from '../../Redux/Overlay/OverlaySlice'
+import { closeOverlay, openOverlay, toggleOverlay } from '../../Redux/Overlay/OverlaySlice'
 import { Context } from '../../Contexts/HeaderContext'
 import { NavbarContainerStyled, NabvarLogoContainerStyled,NavbarMenuBtnStyled, NavbarCartBtnStyled, NavbarLabelsBoxStyled, Overlay } from "./NavbarStyles"
 import {motion} from "framer-motion"
 import { NavLink } from 'react-router-dom'
 import NavbarLinksContainer from "./NavbarLinksContainer"
+import { closeCart, toggleCart } from '../../Redux/Cart/CartSlice'
+import { closeFootModal } from '../../Redux/FootModal/FootModalSlice'
 
 //Import Icons---
 import {GiHamburgerMenu} from "react-icons/gi"
 import {FaShoppingCart} from "react-icons/fa"
 import  Logo  from '../../assets/images/logogtr.png'
 import Cart from '../Cart/Cart'
-import { closeCart, toggleCart } from '../../Redux/Cart/CartSlice'
-import UserSticky from '../UserSticky/UserSticky'
 //---------------
 
 
 const Navbar = () => {
   const overlayActive = useSelector((state)=>state.overlay.active)
-  const activeSticky = useSelector((state)=>state.user.activeSticky)
   const { state, dispatch } = useContext(Context);
   const dispatchRedux = useDispatch();
   
@@ -52,7 +51,9 @@ const Navbar = () => {
            onClick={ 
             () => {
               dispatch({ type: "toggleMenu" });
-              dispatchRedux(toggleOverlay()); 
+              dispatchRedux(openOverlay());
+              dispatchRedux(closeCart()); 
+              dispatchRedux(closeFootModal())
              }
            }
           >
@@ -65,7 +66,8 @@ const Navbar = () => {
           onClick={ 
             () => {
               dispatchRedux(toggleCart());
-              dispatchRedux(toggleOverlay())
+              dispatchRedux(toggleOverlay());
+              dispatchRedux(closeFootModal())
              }
            }
           >
@@ -85,7 +87,8 @@ const Navbar = () => {
         () => {
           dispatch({ type: "closeMenu" });
           dispatchRedux(closeCart());
-          dispatchRedux(toggleOverlay())
+          dispatchRedux(toggleOverlay());
+          dispatch(closeFootModal());
          }
        }
       />

@@ -21,13 +21,21 @@ const overlaySlice = createSlice({
                 ...state,
                 active: false
             }
+        },
+        
+        openOverlay: (state)=>{
+            return {
+                ...state,
+                active: true
+            }
         } 
     }
 })
 
 export const {
     toggleOverlay, 
-    closeOverlay
+    closeOverlay,
+    openOverlay,
 } = overlaySlice.actions;
 
 export default overlaySlice.reducer;
