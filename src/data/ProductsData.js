@@ -1,3 +1,7 @@
+import { getProducts } from "../axios/axiosProducts";
+
+
+//------CÓDIGO VIEJO (Productos hardcodeados)-----------------------------
 export const products = [
     {
         id: 0,
@@ -216,6 +220,45 @@ export const ProductsDataOrderByBrand = products.reduce ((acc, product) => {
 {});
     
 export const Brands = products.reduce ((entrie, product)=> {
+    const { brand, brandLogo} = product;
+    let id=0;
+    if (!entrie[brand]){
+        entrie[brand] = {brand, brandLogo, id};
+        id = id + 1;
+    }
+    return entrie;
+    },
+{});
+
+//-----------------------------------------------------------------------------
+
+export const apiProducts = await getProducts();
+
+export const TotalApiProducts = apiProducts.length;
+
+export const apiProductsData =apiProducts.reduce ((acc, product) => {
+        if (!acc[product.cat]){
+            acc[product.cat] = [];
+        }
+
+        acc[product.cat] = [...acc[product.cat], product];
+
+        return acc;
+        },  
+{});
+
+export const apiProductsDataOrderByBrand = apiProducts.reduce ((acc, product) => {
+        if (!acc[product.brand]){
+            acc[product.brand] = [];
+        }
+
+        acc[product.brand] = [...acc[product.brand], product];
+
+        return acc;
+        },  
+{});
+    
+export const apiBrands = apiProducts.reduce ((entrie, product)=> {
     const { brand, brandLogo} = product;
     let id=0;
     if (!entrie[brand]){

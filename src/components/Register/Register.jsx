@@ -26,15 +26,16 @@ const Register = () => {
         onSubmit= { async (values, actions) => {
           
           const user = await createUsr (
-            values.name+values.lastname,
+            values.name,
+            values.lastname,
             values.email,
             values.password
           );
 
           actions.resetForm();
-
+            
           if (user) {
-            dispatch((setCurrentUser({...user.usuario})));
+            dispatch((setCurrentUser({...user})));
             dispatch(toggleSticky());
           }
 

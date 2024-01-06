@@ -1,37 +1,40 @@
 import axios from "axios";
-import {BASE_URL} from "../Utils/Constats"
+import {BASE_URL, BASE_URL_GTR_API} from "../Utils/Constats"
 
-export const createUsr = async (nombre, email, password) => {
+export const createUsr = async (nombre, apellido, email, contraseña) => {
     try {
         const response = await axios.post(
-                `${BASE_URL}auth/register`,
-                {
-                    nombre,
-                    email,
-                    password
-                }
-            );
-
-            return response.data;
+            `${BASE_URL_GTR_API}auth/register`,
+            {
+                nombre,
+                apellido,
+                email,
+                contraseña
+            }
+        );
+           
+            return response.data.user;
             
     } catch (error) {
-        return alert (error.response.data.errors[0].msg) //esto viene dado en la forma en que la API devuelve los errores
+        
+        return alert (error.response.data.msj + error.response.data.errors.errors[0].msg) 
     }
 }
 
-export const loginUser = async (email, password) => {
+export const loginUser = async (email, contraseña) => {
     try {
         const response = await axios.post( 
-            `${BASE_URL}auth/login`,
+            `${BASE_URL_GTR_API}auth/login`,
             {
                 email,
-                password
+                contraseña
             }
         );
-
-        return response.data;
+            
+        return response.data ;
 
     } catch (error) {
-        return alert (error.response.data.msg)
+        
+        return alert (error.response.data.msj)
     }
 };

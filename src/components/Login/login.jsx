@@ -25,12 +25,13 @@ const Login = () => {
         validationSchema={loginValidationEsch}
 
         onSubmit= {async (values) => {
-          const user = await loginUser(values.email, values.password);
+
+          const { user, token} = await loginUser(values.email, values.password);
           
           if (user) {
             dispatch(setCurrentUser({
-              ...user.usuario,
-              token: user.token
+              ...user,
+              token: token
             }));
 
             dispatch(toggleSticky());
