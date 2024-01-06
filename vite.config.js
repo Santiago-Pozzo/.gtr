@@ -9,5 +9,8 @@ export default defineConfig({
     alias:{
       '@images': '/src/assets/images',
     }
-  }
+  },
+  esbuild: {
+    target: 'es2020', 
+  },
 })
