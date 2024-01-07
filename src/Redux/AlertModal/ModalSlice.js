@@ -27,9 +27,10 @@ const modalSlice = createSlice({
         },
         
         setModalAction: (state, action)=>{
+             
             return {
                 ...state,
-                act: modalAction(action.payload)
+                act: action.payload
             }
         }, 
         

@@ -6,7 +6,7 @@ import CartProduct from './CartProduct'
 import Button from '../Button/Button'
 import { setModalAction, setModalMsg, setModalTitle, toggleModal } from '../../Redux/AlertModal/ModalSlice'
 import { LinkStyled } from '../Login/loginStyles'
-import { toggleCart } from '../../Redux/Cart/CartSlice'
+import { setTotal, toggleCart } from '../../Redux/Cart/CartSlice'
 import { closeOverlay } from '../../Redux/Overlay/OverlaySlice'
 
 
@@ -76,8 +76,10 @@ const Cart = () => {
                  return item.quantity + " " + item.brand + " " + item.model+ " "
                 }) 
                 + "por un total de $" + total + " ¿Deseas continuar?"))
-            dispatch(setModalAction("clearCart"))  
-            dispatch(toggleModal())          
+            dispatch(setTotal(total))
+            dispatch(setModalAction("postOrder"))
+            dispatch(toggleModal())
+                      
           }
          }
         > Comprar </Button>

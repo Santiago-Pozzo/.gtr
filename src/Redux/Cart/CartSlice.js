@@ -3,7 +3,8 @@ import { addItemToCart, removeItemFromCart, removeItemUnitFromCart } from "./Car
 
 const INITIAL_STATE = {
     cartItems: [],
-    active: false
+    active: false,
+    total: 0
 }
 
 const cartSlice = createSlice({
@@ -51,7 +52,14 @@ const cartSlice = createSlice({
                 ...state,
                 active: false
             }
-        }
+        },
+
+        setTotal: (state, action) => {
+            return {
+                ...state,
+                total: action.payload
+            }
+        },
     }
 })
 
@@ -61,7 +69,8 @@ export const {
     removeItemUnit,
     clearCart,
     toggleCart, 
-    closeCart
+    closeCart, 
+    setTotal
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

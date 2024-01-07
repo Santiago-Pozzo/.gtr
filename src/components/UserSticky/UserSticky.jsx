@@ -6,6 +6,7 @@ import { setCurrentUser, toggleOpenSticky, toggleSticky } from '../../Redux/User
 import { LuUser } from "react-icons/lu"
 import { MdOutlineArrowForwardIos, MdOutlineArrowBackIosNew} from "react-icons/md"
 import { setModalTitle, setModalMsg, setModalAction, toggleModal} from '../../Redux/AlertModal/ModalSlice';
+import { clearCart } from '../../Redux/Cart/CartSlice';
 
 
 const UserSticky = () => {
@@ -15,9 +16,12 @@ const UserSticky = () => {
   const handleLogout = () => {
     dispatch(setCurrentUser(null));
     dispatch(toggleSticky());
+    dispatch(clearCart());
   }
 
       return (
+        <>
+        { currentUser && (
     <StickyStyled
       className={stickyOpen? "" :"closed"}
     >
@@ -45,7 +49,7 @@ const UserSticky = () => {
                 dispatch(setModalTitle("Cerrar sesión"));
                 dispatch(setModalMsg("¿Deseas cerrar tu usuario?"))
                 dispatch(setModalAction("logout"))  
-                dispatch(toggleModal())   
+                dispatch(toggleModal())                 
               }}      
             >
               <TbLogout/>
@@ -55,7 +59,8 @@ const UserSticky = () => {
       }
       
 
-    </StickyStyled>
+    </StickyStyled>)}
+    </>
   )
 }
 

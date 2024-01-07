@@ -25,6 +25,14 @@ const userSlice = createSlice({
             };
         },
 
+        openSticky: (state) => {
+            return {
+                ...state,
+                activeSticky: true,
+                stickyOpen: false
+            };
+        },
+
         toggleOpenSticky: (state) => {
             return {
                 ...state,
@@ -33,6 +41,7 @@ const userSlice = createSlice({
         },
 
         logout: (state) => {
+           
             return {
                 ...state,
                 currentUser: null,
@@ -47,7 +56,8 @@ export const {
     setCurrentUser,
     toggleSticky, 
     toggleOpenSticky,
-    logout
+    logout, 
+    openSticky
 } = userSlice.actions;
 
 export default userSlice.reducer

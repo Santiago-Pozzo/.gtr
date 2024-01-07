@@ -7,7 +7,7 @@ import { loginValidationEsch } from '../../Formik/FormValidations'
 import { loginInitialValues } from '../../Formik/InitialValues'
 import { loginUser } from '../../axios/axiosUser'
 import { useDispatch } from 'react-redux'
-import { setCurrentUser, toggleSticky } from '../../Redux/User/UserSlice'
+import { openSticky, setCurrentUser, toggleSticky } from '../../Redux/User/UserSlice'
 import useRedirect from '../../Hooks/useRerdirect'
 
 
@@ -34,7 +34,7 @@ const Login = () => {
               token: token
             }));
 
-            dispatch(toggleSticky());
+            dispatch(openSticky());
           }
         }}
       >
