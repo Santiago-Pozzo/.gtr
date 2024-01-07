@@ -15,6 +15,7 @@ import { closeOverlay } from '../../Redux/Overlay/OverlaySlice'
 import { fetchProductsData } from '../../Redux/Products/productsFunctions'
 import { getProducts } from '../../Redux/Products/ProductsSlice'
 import { useNavigate } from 'react-router-dom'
+import { getBrands } from '../../Redux/Categories/BrandsSlice'
 //---------------
 
 const NavbarLinksContainer = () => {
@@ -64,6 +65,8 @@ const NavbarLinksContainer = () => {
                 totalProducts: TotalApiProducts,
                 api_prods: apiProducts,
             }));      
+
+            dispatchRedux(getBrands(apiBrands));
           } 
           dispatch({ type: "closeMenu" });
           dispatchRedux(closeOverlay());  

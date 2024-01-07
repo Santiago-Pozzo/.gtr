@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit"
 import { Brands } from "../../data/ProductsData"
 
 const INITIAL_STATE = {
-    brands: Brands,
+    brands: [],
     selected: null
 }
 
@@ -11,6 +11,12 @@ export const brandsSlice = createSlice(
         name: "brands",
         initialState: INITIAL_STATE,
         reducers: {
+            getBrands: (state, action) => {
+                return {
+                    ...state,
+                    brands: action.payload
+                }
+            }, 
             selectBrand: (state, action) => {
                 return {
                     ...state,
@@ -27,6 +33,6 @@ export const brandsSlice = createSlice(
         }
     })
 
-export const { selectBrand, setNullBrand } = brandsSlice.actions;
+export const { selectBrand, setNullBrand, getBrands } = brandsSlice.actions;
 
 export default brandsSlice.reducer;

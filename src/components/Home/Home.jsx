@@ -7,6 +7,7 @@ import { HomeWrapperStyled } from "./HomeStyles"
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductsData } from '../../Redux/Products/productsFunctions';
 import { getProducts } from '../../Redux/Products/ProductsSlice';
+import { getBrands } from '../../Redux/Categories/BrandsSlice';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -26,7 +27,8 @@ const Home = () => {
                         apiProducts,
                         apiProductsData,
                         apiProductsDataOrderByBrand,
-                        TotalApiProducts
+                        TotalApiProducts,
+                        apiBrands
                     } = await fetchProductsData();
 
                     dispatch(getProducts({
@@ -35,6 +37,8 @@ const Home = () => {
                         totalProducts: TotalApiProducts,
                         api_prods: apiProducts,
                     }));
+
+                    dispatch(getBrands(apiBrands));
                 } 
                 navigate("/products");
             } }
