@@ -2,7 +2,7 @@ import axios from "axios";
 import { BASE_URL_GTR_API }  from "../Utils/Constats"
 
 export const postOrder = async (token, cartItems, total) => {
-        
+            console.log(token);
     const arrayProductos = cartItems.map((item)=>{
         return {
             id_producto: item.id,
