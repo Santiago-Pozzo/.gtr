@@ -9,10 +9,12 @@ import { createUsr } from '../../axios/axiosUser'
 import { useDispatch } from "react-redux"
 import { setCurrentUser, toggleSticky } from '../../Redux/User/UserSlice'
 import useRedirect from '../../Hooks/useRerdirect'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
   const dispatch = useDispatch();
   useRedirect("/");
+  const navigate = useNavigate();
 
   return (
     <RegisterWrapperStyled>
@@ -35,10 +37,8 @@ const Register = () => {
           actions.resetForm();
             
           if (user) {
-            dispatch((setCurrentUser({...user})));
-            dispatch(toggleSticky());
+            navigate("/login");
           }
-
         }}
       >
 

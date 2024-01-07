@@ -20,7 +20,7 @@ const Validate = () => {
 
             const { actualizedUser } = await verifyUser(currentUser.email, values.code);
 
-            dispatch(setCurrentUser(actualizedUser));
+            dispatch(setCurrentUser({...actualizedUser, token: currentUser.token}));
             navigate('/');  
             dispatch(openSticky())
 
