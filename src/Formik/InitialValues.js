@@ -9,3 +9,7 @@ export const registerInitialValues = {
     email: "",
     password: "",
   }
+
+  export const vaidateInitialValues = {
+    code: "",
+  }

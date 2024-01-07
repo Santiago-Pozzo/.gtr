@@ -1,5 +1,58 @@
 import styled from "styled-components"
 
+
+
+export const StickyContainerStyled = styled.div`
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+
+    h3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        
+        font-size: 12px;
+
+        @media (min-width: 760px) {
+            font-size: 20px;
+        }
+    }
+
+    .link {
+        margin: 0;
+        padding: 0;
+
+        
+    }
+`
+
+export const VerifyUserLinkStyled = styled.p`
+    color: yellow;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+
+    &.hidden {
+        display: none
+    }
+
+    @media (min-width: 760px) {
+            font-size: 15px;
+        }
+
+        cursor: pointer;
+`
+
 export const StickyStyled = styled.div`    
     z-index:2;
     position: fixed;
@@ -27,7 +80,16 @@ export const StickyStyled = styled.div`
         min-width: 10px;
     }
 
-    :first-child {
+    .alert {
+        color: yellow;
+
+        @media (min-width: 760px) {
+           height: 28px;
+           width: 28px;
+        }
+    }
+
+    .icon {//encontrar la forma de dar estos estilos al boto
         height: 17px;
         width: 17px;
 
@@ -48,14 +110,14 @@ export const StickyStyled = styled.div`
         }
     }
 
-    :nth-child(2) {
+    .userIcon {
         height: 18px;
         width: 18px;
-        margin-right: 4px;
+        margin-right: 6px;
 
         @media (min-width: 760px) {
-           height: 25px;
-           width: 25px;
+           height: 28px;
+           width: 28px;
         }
     }
 
@@ -67,16 +129,6 @@ export const StickyStyled = styled.div`
         padding: 15px 0;
     }
 
-    h3 {
-        padding: 0;
-        margin: 0;
-        margin-right: 5px;
-        font-size: 15px;
-
-        @media (min-width: 760px) {
-            font-size: 20px;
-        }
-    }
 
     button {
         padding: 5px;

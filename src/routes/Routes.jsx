@@ -13,6 +13,7 @@ import Error from '../components/Error/Error'
 import Contact from '../components/Contact/Contact'
 import Login from '../components/Login/login'
 import Register from '../components/Register/Register'
+import Validate from '../components/Validate/validate'
 
 
 const Routes = () => {
@@ -26,6 +27,7 @@ const Routes = () => {
                 <Route path='contact' element={<Contact/>} />
                 <Route path='login' element={<Login/>} />
                 <Route path='register' element={<Register/>} />
+                <Route path='validate' element={<Validate/>} />
                 <Route path='*' element={<Error/>} />
             </ReactDomRoutes>
         </Layout>

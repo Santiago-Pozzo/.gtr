@@ -8,10 +8,7 @@ export const registerValidationEsch = Yup.object({
                 trim()
                 .required("Campo obligatorio")
                 .min(8, "La contraseña debe tener al menos 8 caracteres")
-                .matches(
-                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
-                "La contraseña debe contener al menos una letra mayúscula, una letra minúscula y un número"
-                ),
+                
 });
 
 export const contactValidationEsch = Yup.object({
@@ -27,8 +24,13 @@ export const loginValidationEsch = Yup.object({
                 trim()
                 .required("Campo obligatorio")
                 .min(8, "La contraseña debe tener al menos 8 caracteres")
-                .matches(
-                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
-                "La contraseña debe contener al menos una letra mayúscula, una letra minúscula y un número"
-                ),
+                
+});
+
+export const validateValidationEsch = Yup.object({
+    password: Yup.string().
+                trim()
+                .required("Campo obligatorio")
+                .min(6, "EL código debe tener caracteres")
+                .max(6, "EL código debe tener caracteres")                
 });

@@ -13,7 +13,7 @@ import FootModal from '../FootModal/FootModal'
 const Layout = ({children}) => {
   const {state, dispatch} = useContext(Context);
   const activeSticky = useSelector((state)=>state.user.activeSticky)
-  
+  const user = useSelector((state)=>state.user.currentUser)
   const { pathname } = useLocation();
 
   useEffect(()=>{
@@ -25,7 +25,7 @@ const Layout = ({children}) => {
       <NavBar/>
 
       {
-        activeSticky && (
+        user && (
          <UserSticky/>
         ) 
       }
