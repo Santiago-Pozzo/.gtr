@@ -12,13 +12,19 @@ import {FaUserPlus} from "react-icons/fa"
 import {IoMdContacts} from "react-icons/io"
 import {TbHandRock} from "react-icons/tb"
 import { closeOverlay } from '../../Redux/Overlay/OverlaySlice'
+import { fetchProductsData } from '../../Redux/Products/productsFunctions'
+import { getProducts } from '../../Redux/Products/ProductsSlice'
+import { useNavigate } from 'react-router-dom'
 //---------------
 
 const NavbarLinksContainer = () => {
+    const navigate = useNavigate();
     const { state, dispatch } = useContext(Context);
     const dispatchRedux = useDispatch();
     const { activeSticky } = useSelector((state) => state.user)
-  
+    const stateProducts = useSelector((state)=>state.products)
+    
+
     return (
     <NavbarLinksContainerStyled
       className={state.isActive ? "active" : ""}
@@ -42,11 +48,25 @@ const NavbarLinksContainer = () => {
 
 
      <NavbarLinkStyled 
-       to="/products"
-       onClick={
-         () => {
+       to='/products'
+       onClick={ async () => {
+          if ( !stateProducts.loaded ) {
+            const {
+                apiProducts,
+                apiProductsData,
+                apiProductsDataOrderByBrand,
+                TotalApiProducts
+            } = await fetchProductsData();
+
+            dispatchRedux(getProducts({
+                products: apiProductsData,
+                productsBybrand: apiProductsDataOrderByBrand,
+                totalProducts: TotalApiProducts,
+                api_prods: apiProducts,
+            }));      
+          } 
           dispatch({ type: "closeMenu" });
-          dispatchRedux(closeOverlay());
+          dispatchRedux(closeOverlay());  
         }
        }
      >

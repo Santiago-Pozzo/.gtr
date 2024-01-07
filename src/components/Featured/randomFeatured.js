@@ -1,5 +1,7 @@
 import { products } from '../../data/ProductsData';
 
+
+//Modificar para que reciba los productos y la cantidad, despues (no se como)le envio los productos desde el componente trayendolos del estado 
 export const pickRandomProducts = (cantidad) => {
     const nuevoArray = [];
 

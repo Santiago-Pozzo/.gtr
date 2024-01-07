@@ -1,19 +1,35 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ProductsData, ProductsDataOrderByBrand, TotalApiProducts, TotalProducts, apiProductsData, apiProductsDataOrderByBrand, products } from "../../data/ProductsData";
+//import { ProductsData, ProductsDataOrderByBrand, TotalApiProducts, TotalProducts, apiProductsData, apiProductsDataOrderByBrand, products } from "../../data/ProductsData";
+import { fetchProductsData } from "./productsFunctions";
+
+//const { apiProductsData, apiProductsDataOrderByBrand, TotalApiProducts, apiProducts } = await fetchProductsData();
 
 const INITIAL_STATE = {
-    products: apiProductsData,
-    productsByBrand: apiProductsDataOrderByBrand,
-    totalProducts: TotalApiProducts,
+    products: [],
+    productsByBrand: [],
+    totalProducts: [],
+    api_prods: [],
+    loaded: false,
+    //products: apiProductsData,
+    //productsByBrand: apiProductsDataOrderByBrand,
+    //totalProducts: TotalApiProducts,
+    //api_prods: apiProducts
 }
 
 export const productSlice = createSlice({
     name: "products",
     initialState: INITIAL_STATE,
     reducers: {
-
-        getProducts: state => {
-            return state;
+        getProducts: (state, action) => {
+            
+            return {
+                ...state,
+                products: action.payload.products,
+                productsByBrand: action.payload.productsBybrand,
+                totalProducts: action.payload.totalProducts,
+                api_prods: action.payload.api_prods,
+                loaded: true
+             }
         }
     }
 })
